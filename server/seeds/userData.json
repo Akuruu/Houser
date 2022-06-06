@@ -3,36 +3,96 @@
     "username": "BrianK",
     "email": "bkernighan@techfriends.dev",
     "password": "password01",
-    "landlord": true
+    "landlord": true,
+    "contact": {
+      "firstName": "Brian",
+      "lastName": "Kernighan",
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "FR",
+      "zipcode": "99999",
+      "phone1": "(123)456-7890",
+      "phone2": "(910)827-6354"
+    }
   },
   {
     "username": "MKAlexander",
     "email": "mkanatalexander@techfriends.dev",
     "password": "password02",
-    "landlord": true
+    "landlord": true,
+    "contact": {
+      "firstName": "Max",
+      "lastName": "Kanat-Alexander",
+      "street": "124 Main St",
+      "city": "Anytown",
+      "state": "FR",
+      "zipcode": "99999",
+      "phone1": "(123)456-7890",
+      "phone2": ""
+    }
   },
   {
     "username": "WtlStiff",
     "email": "wtls@techfriends.dev",
     "password": "password03",
-    "landlord": true
+    "landlord": true,
+    "contact": {
+      "firstName": "David",
+      "lastName": "Simpson",
+      "street": "125 Main St",
+      "city": "Anytown",
+      "state": "FR",
+      "zipcode": "99999",
+      "phone1": "(123)456-7890",
+      "phone2": "(910)827-6354"
+    }
   },
   {
     "username": "KentBeck",
     "email": "kbeck@techfriends.dev",
     "password": "password04",
-    "landlord": true
+    "landlord": true,
+    "contact": {
+      "firstName": "Kent",
+      "lastName": "Beck",
+      "street": "126 Main St",
+      "city": "Anytown",
+      "state": "FR",
+      "zipcode": "99999",
+      "phone1": "(123)456-7890",
+      "phone2": ""
+    }
   },
   {
     "username": "EdVBerard",
     "email": "evberard@techfriends.dev",
     "password": "password05",
-    "landlord": false
+    "landlord": false,
+    "contact": {
+      "firstName": "Ed",
+      "lastName": "Berard",
+      "street": "127 Main St",
+      "city": "Anytown",
+      "state": "FR",
+      "zipcode": "99999",
+      "phone1": "(123)456-7890",
+      "phone2": "(910)827-6354"
+    }
   },
   {
     "username": "AKay",
     "email": "akay@techfriends.dev",
     "password": "password06",
-    "landlord": false
+    "landlord": false,
+    "contact": {
+      "firstName": "Alan",
+      "lastName": "Kay",
+      "street": "128 Main St",
+      "city": "Anytown",
+      "state": "FR",
+      "zipcode": "99999",
+      "phone1": "(123)456-7890",
+      "phone2": ""
+    }
   }
 ]

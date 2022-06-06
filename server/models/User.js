@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Contact = require('./Contact');
-const Property = require('./Property');
 
 const userSchema = new Schema({
   username: {
@@ -25,7 +23,47 @@ const userSchema = new Schema({
     type: Boolean,
     default: false
   },
-  contact: Contact.schema,
+  contact: {
+    firstName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    lastName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    street: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    city: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    state: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    zipcode: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    phone1: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    phone2: {
+      type: String,
+      trim: true
+    }
+  },
   properties: [
     {
       type: Schema.Types.ObjectId,

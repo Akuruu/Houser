@@ -5,22 +5,20 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find()
-      .populate('contact')
-      .populate('properties')
+      return User.find().populate('properties');
     },
 
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return User.findOne({ _id: userId }).populate('properties');
     },
 
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id }).populate('properties');
       }
       throw new AuthenticationError('You need to be logged in!');
-    },
+    }
   },
 
   Mutation: {
@@ -50,9 +48,8 @@ const resolvers = {
       if (context.user) {
         return User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { addProperty: {input} },},
-          {new: true,
-          runValidators: true}
+          { $push: { addProperty: { input } } },
+          { new: true, runValidators: true }
         );
       }
       throw new AuthenticationError('You need to be logged in!');
@@ -62,9 +59,8 @@ const resolvers = {
       if (context.user) {
         return User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { addContact: {input} },},
-          {new: true,
-          runValidators: true}
+          { $set: { contact: { input } } },
+          { new: true, runValidators: true }
         );
       }
       throw new AuthenticationError('You need to be logged in!');
@@ -80,8 +76,7 @@ const resolvers = {
     removeProperty: async (parent, { propertyId }, context) => {
       if (context.user) {
         const property = await Property.findOneAndDelete({
-          _id: propertyId,
-          thoughtAuthor: context.user.username,
+          _id: propertyId
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -95,7 +90,7 @@ const resolvers = {
     removeContact: async (parent, { contactId }, context) => {
       if (context.user) {
         const contact = await Contact.findOneAndDelete({
-          _id: contactId,
+          _id: contactId
         });
         await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -105,7 +100,21 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-  },
+
+    addTenant: async (parent, { propertyId }, context) => {
+      if (context.user) {
+        const property = await Property.findOneAndUpdate(
+          {
+            _id: propertyId
+          },
+          { $addToSet: { tenant: userId } },
+          { new: true }
+        );
+        return property;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    }
+  }
 };
 
 module.exports = resolvers;
