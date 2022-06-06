@@ -3,6 +3,16 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const contactSchema = new Schema({
+  firstName: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  lastName: {
+    type: String,
+    required: true,
+    trim: true
+  },
   street: {
     type: String,
     required: true,
