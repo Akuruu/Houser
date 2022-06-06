@@ -2,13 +2,23 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
-    _id: ID!
-    username: String!
-    email: String!
-    password: String!
+    _id: ID
+    username: String
+    email: String
     landlord: Boolean
     contact: [Contact]
-    property: [Property]
+    properties: [Property]
+  }
+
+  type Contact {
+    firstName: String
+    lastName: String
+    street: String
+    city: String
+    state: String
+    zipcode: Int
+    phone1: String
+    phone2: String
   }
 
   type Property {
@@ -17,23 +27,9 @@ const typeDefs = gql`
     rent: Int
     image: String
     due: String
-    contact: [Contact]!
-  }
-
-  type Contact {
-    _id: ID!
-    firstName: String
-    lastName: String
-    street: String
-    city: String
-    state: String
-    zipcode: Int
-    phone1: String
-    phone2: String
   }
 
   input inputContact {
-    contactId: Int
     firstName: String
     lastName: String
     street: String
@@ -42,7 +38,6 @@ const typeDefs = gql`
     zipcode: Int
     phone1: String
     phone2: String
-
   }
 
   input inputProperty {
@@ -51,7 +46,6 @@ const typeDefs = gql`
     rent: Int
     image: String
     due: String
-
   }
 
   type Auth {
@@ -64,8 +58,6 @@ const typeDefs = gql`
     user(userId: ID!): User
     properties: [Property]
     property(propertyId: ID!): User
-    contacts: [Contact]
-    contact(contactId: ID!): Contact
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: User
   }
@@ -75,9 +67,9 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addProperty(input: inputProperty): Property
     addContact(input: inputContact): User
+    addTenant(userId: ID!): Property
     removeUser(userId: ID!, contactId: ID!, propertyId: ID!): User
     removeProperty(propertyId: ID!): Property
-    removeContact(contactId: ID!): Contact
   }
 `;
 
