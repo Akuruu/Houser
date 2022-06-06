@@ -1,0 +1,50 @@
+[
+  {
+    "nickname": "Star House",
+    "street": "128 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "rent": 1600
+  },
+  {
+    "nickname": "Stripe House",
+    "street": "123 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "rent": 2600
+  },
+  {
+    "nickname": "Green House",
+    "street": "124 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "rent": 3600
+  },
+  {
+    "nickname": "Ranch House",
+    "street": "125 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "rent": 2300
+  },
+  {
+    "nickname": "Main Condo",
+    "street": "126 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "rent": 2450
+  },
+  {
+    "nickname": "Pizza Hut House",
+    "street": "127 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "rent": 2200
+  }
+]

@@ -1,1 +1,62 @@
-[{}]
+[
+  {
+    "firstName": "Brian",
+    "lastName": "Kernighan",
+    "street": "123 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "phone1": "(123)456-7890",
+    "phone2": "(910)827-6354"
+  },
+  {
+    "firstName": "Max",
+    "lastName": "Kanat-Alexander",
+    "street": "124 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "phone1": "(123)456-7890",
+    "phone2": ""
+  },
+  {
+    "firstName": "David",
+    "lastName": "Simpson",
+    "street": "125 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "phone1": "(123)456-7890",
+    "phone2": "(910)827-6354"
+  },
+  {
+    "firstName": "Kent",
+    "lastName": "Beck",
+    "street": "126 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "phone1": "(123)456-7890",
+    "phone2": ""
+  },
+  {
+    "firstName": "Ed",
+    "lastName": "Berard",
+    "street": "127 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "phone1": "(123)456-7890",
+    "phone2": "(910)827-6354"
+  },
+  {
+    "firstName": "Alan",
+    "lastName": "Kay",
+    "street": "128 Main St",
+    "city": "Anytown",
+    "state": "FR",
+    "zipcode": "99999",
+    "phone1": "(123)456-7890",
+    "phone2": ""
+  }
+]

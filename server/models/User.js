@@ -26,7 +26,12 @@ const userSchema = new Schema({
     default: false
   },
   contact: Contact.schema,
-  properties: [Property.schema]
+  properties: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Property'
+    }
+  ]
 });
 
 // set up pre-save middleware to create password
