@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 const { User, Contact, Property } = require('../models');
-const userSeeds = require('./userSeeds.json');
+const userSeeds = require('./userData.json');
 const contactSeeds = require('./contactData.json');
 const propertySeeds = require('./propertyData.json');
 
