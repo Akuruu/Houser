@@ -107,7 +107,7 @@ const resolvers = {
           {
             _id: propertyId
           },
-          { $addToSet: { tenant: userId } },
+          { $addToSet: { tenants: userId } },
           { new: true }
         );
         return property;
