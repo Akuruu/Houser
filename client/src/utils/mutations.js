@@ -1,5 +1,8 @@
 import { gql } from '@apollo/client';
 
+// create one for Tenants
+
+
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -37,7 +40,7 @@ export const ADD_PROPERTY = gql`
   }
 `;
 
-//adjust for tenants instead
+//ADD_CONTACT 
 export const ADD_CONTACT = gql`
   mutation addContact($input: AddContactInput ) {
     addContact(input: $input) {
