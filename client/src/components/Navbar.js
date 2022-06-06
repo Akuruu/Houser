@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import { Navbar, Nav,  Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
@@ -13,7 +13,7 @@ const AppNavbar = () => {
   return (
     <>
       <Navbar bg='dark' variant='dark' expand='lg'>
-        <Container fluid>
+        <Typography fluid>
           <Navbar.Brand as={Link} to='/'>
             Google Books Search
           </Navbar.Brand>
@@ -36,7 +36,7 @@ const AppNavbar = () => {
               )}
             </Nav>
           </Navbar.Collapse>
-        </Container>
+        </Typography>
       </Navbar>
       {/* set modal data up */}
       <Modal
@@ -45,7 +45,7 @@ const AppNavbar = () => {
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
         {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
+        <Tab.Typography defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
@@ -68,10 +68,15 @@ const AppNavbar = () => {
               </Tab.Pane>
             </Tab.Content>
           </Modal.Body>
-        </Tab.Container>
+        </Tab.Typography>
       </Modal>
     </>
   );
 };
 
 export default AppNavbar;
+
+
+
+
+
