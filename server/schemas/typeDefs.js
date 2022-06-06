@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     landlord: Boolean
-    contact: [Contact]
+    contact: Contact
     properties: [Property]
   }
 
@@ -24,6 +24,10 @@ const typeDefs = gql`
   type Property {
     _id: ID!
     nickname: String
+    street: String
+    city: String
+    state: String
+    zipcode: String
     rent: Int
     image: String
     due: String
@@ -43,6 +47,10 @@ const typeDefs = gql`
   input inputProperty {
     propertyId: Int
     nickname: String
+    street: String
+    city: String
+    state: String
+    zipcode: String
     rent: Int
     image: String
     due: String
@@ -63,7 +71,12 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(
+      username: String!
+      email: String!
+      password: String!
+      landlord: Boolean!
+    ): Auth
     login(email: String!, password: String!): Auth
     addProperty(input: inputProperty): Property
     addContact(input: inputContact): User

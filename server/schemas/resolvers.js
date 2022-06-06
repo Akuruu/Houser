@@ -22,8 +22,8 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { username, email, password, landlord }) => {
+      const user = await User.create({ username, email, password, landlord });
       const token = signToken(user);
 
       return { token, user };
@@ -45,10 +45,11 @@ const resolvers = {
 
     // Add a third argument to the resolver to access data in our `context`
     addProperty: async (parent, { input }, context) => {
+      const property = await Property.create(...input);
       if (context.user) {
         return User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { addProperty: { input } } },
+          { $addToSet: { properties: property._id } },
           { new: true, runValidators: true }
         );
       }
