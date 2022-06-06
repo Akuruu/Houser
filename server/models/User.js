@@ -29,7 +29,7 @@ const userSchema = new Schema({
   landlord: {
     type: Boolean
   },
-  contact: Contact,
+  contact: Contact.schema,
   properties: [Property.schema]
 });
 
