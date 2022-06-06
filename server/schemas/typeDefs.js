@@ -81,7 +81,7 @@ const typeDefs = gql`
     addProperty(input: inputProperty): Property
     addContact(input: inputContact): User
     addTenant(userId: ID!): Property
-    removeTenant(propertyId: ID!): Property
+    removeTenant(propertyId: ID!, userId: ID!): Property
     removeUser(userId: ID!, contactId: ID!, propertyId: ID!): User
     removeProperty(propertyId: ID!): Property
   }
