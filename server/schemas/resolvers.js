@@ -87,27 +87,13 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    removeContact: async (parent, { contactId }, context) => {
-      if (context.user) {
-        const contact = await Contact.findOneAndDelete({
-          _id: contactId
-        });
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { contact: contact._id } }
-        );
-        return contact;
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-
     addTenant: async (parent, { propertyId }, context) => {
       if (context.user) {
         const property = await Property.findOneAndUpdate(
           {
             _id: propertyId
           },
-          { $addToSet: { tenants: userId } },
+          { $addToSet: { tenants: context.user._id } },
           { new: true }
         );
         return property;

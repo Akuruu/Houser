@@ -6,17 +6,19 @@ const typeDefs = gql`
     username: String
     email: String
     landlord: Boolean
-    contact: {
-      firstName: String
-      lastName: String
-      street: String
-      city: String
-      state: String
-      zipcode: Int
-      phone1: String
-      phone2: String
-    }
-    property: [Property]
+    contact: [Contact]
+    properties: [Property]
+  }
+
+  type Contact {
+    firstName: String
+    lastName: String
+    street: String
+    city: String
+    state: String
+    zipcode: Int
+    phone1: String
+    phone2: String
   }
 
   type Property {
@@ -26,7 +28,6 @@ const typeDefs = gql`
     image: String
     due: String
   }
-
 
   input inputContact {
     firstName: String
