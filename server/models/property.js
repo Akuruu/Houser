@@ -1,32 +1,44 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require("mongoose");
 
-const Property = new Schema({
-  streetNumber: {
-    type: Int,
-    required: true
-  },
-  streetName: {
+const { Schema } = mongoose;
+
+const propertySchema = new Schema({
+  nickname: {
     type: String,
-    required: true
+    trim: true,
+  },
+  street: {
+    type: String,
+    required: true,
+    trim: true,
   },
   city: {
     type: String,
-    required: true
+    required: true,
+    trim: true,
   },
   state: {
     type: String,
-    required: true
+    required: true,
+    trim: true,
   },
   zipcode: {
-      type: Int,
-      min: 5,
-      required: true
+    type: String,
+    required: true,
+    trim: true,
+  },
+  rent: {
+    type: Number,
+    required: true,
   },
   image: {
-    type: String
+    type: String,
+  },
+  due: {
+    type: Date,
   },
 });
 
-const Matchup = model('Property', propertySchema);
+const Property = mongoose.model("Property", propertySchema);
 
 module.exports = Property;
