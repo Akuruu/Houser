@@ -6,15 +6,10 @@ const Contact = require('./Contact');
 const Property = require('./Property');
 
 const userSchema = new Schema({
-  firstName: {
+  username: {
     type: String,
     required: true,
-    trim: true
-  },
-  lastName: {
-    type: String,
-    required: true,
-    trim: true
+    unique: true
   },
   email: {
     type: String,
@@ -27,9 +22,10 @@ const userSchema = new Schema({
     minlength: 5
   },
   landlord: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
-  contact: Contact,
+  contact: Contact.schema,
   properties: [Property.schema]
 });
 
