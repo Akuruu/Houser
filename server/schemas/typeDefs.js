@@ -16,7 +16,7 @@ const typeDefs = gql`
     nickname: String
     rent: Int
     image: String
-    due: Date
+    due: String
     contact: [Contact]!
   }
 
@@ -50,7 +50,7 @@ const typeDefs = gql`
     nickname: String
     rent: Int
     image: String
-    due: Date
+    due: String
 
   }
 
@@ -76,8 +76,9 @@ const typeDefs = gql`
     addProperty(input: inputProperty): Property
     addContact(input: inputContact): User
     removeUser(userId: ID!, contactId: ID!, propertyId: ID!): User
+    removeProperty(propertyId: ID!): Property
+    removeContact(contactId: ID!): Contact
   }
 `;
-
 
 module.exports = typeDefs;
