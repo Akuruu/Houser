@@ -1,10 +1,10 @@
 import React from "react";
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import PropertyCard from "../properties";
+import PropertyCard from "../Properties";
 
 
-const ownerPortal = ({ properties, title }) => {
+const Ownerportal = ({ properties, title }) => {
   if (!properties.length) {
     return <h3>No Properties Yet</h3>;
   }
@@ -31,4 +31,4 @@ const ownerPortal = ({ properties, title }) => {
   );
 };
 
-export default ownerPortal;
+export default Ownerportal;
