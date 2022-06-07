@@ -16,7 +16,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Renterportal from './components/Renterportal';
 import Ownerportal from './components/Ownerportal';
-import './styles/app.css'
+import './app.css'
 
 const httpLink = createHttpLink({
   uri: '/graphql'
