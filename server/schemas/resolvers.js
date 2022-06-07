@@ -18,6 +18,14 @@ const resolvers = {
         return User.findOne({ _id: context.user._id }).populate('properties');
       }
       throw new AuthenticationError('You need to be logged in!');
+    },
+
+    properties: async () => {
+      return Property.find().populate('tenants');
+    },
+
+    property: async (parent, { propertyId }) => {
+      return Property.findOne({ _id: propertyId }).populate('tenants');
     }
   },
 
@@ -88,15 +96,16 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    addTenant: async (parent, { propertyId }, context) => {
+    addTenant: async (parent, { propertyId, username }, context) => {
       if (context.user) {
+        const tenant = await User.findOne({ username: username });
         return Property.findOneAndUpdate(
           {
             _id: propertyId
           },
-          { $addToSet: { tenants: context.user._id } },
+          { $addToSet: { tenants: tenant._id } },
           { new: true }
-        );
+        ).populate('tenants');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
