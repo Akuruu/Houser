@@ -10,22 +10,22 @@ const Ownerportal = ({ properties, title }) => {
 
   return (
     <div>
-      <h3 className="text-primary">{ow.name}</h3>
+      <h3 className="text-primary">George's Rental</h3>
       <div className="flex-row justify-space-between my-4">
-        {property &&
+        {/* {property &&
           property.map((property) => (
-            <div key={property._id} className="col-12 col-xl-6">
+            <div key={property._id} className="col-12 col-xl-6"> */}
               <PropertyCard />
 
                 {/* Use <Link> component to create an internal hyperlink reference. Use `to` prop to set the path instead of `href` */}
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
-                  to={`/owner/${property._id}`}>
+                  to={`/owner`}>
                 </Link>
               
             </div>
-          ))}
-      </div>
+          {/* ))}
+      </div> */}
     </div>
   );
 };
