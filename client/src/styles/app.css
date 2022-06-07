@@ -21,7 +21,7 @@
       background-position: 0 0;
     }
   }
-header {
+.navcolor {
     background-color: var(--Blue);
 }
 
