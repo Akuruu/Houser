@@ -1,34 +1,43 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+// import Card from 'react-bootstrap/Card';
+import { Container, CardGroup, Card, Button } from 'react-bootstrap';
+import { QUERY_PROPERTY } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
 
-export default function PropertyCard() {
+const PropertyCard = () => {
+  const { loading, data } = useQuery(QUERY_PROPERTY);
+ 
+  const userData = data?.property || [];
+
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-    <CardActionArea>
-      <CardMedia
-        component="img"
-        height="140"
-        image={property.image}
-        alt="property listed"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-         `{property.streetNumber} " " {property.streetName}" "{property.city}", "{property.state}" "{property.zipcode}
-        </Typography>
-      </CardContent>
-    </CardActionArea>
-    <CardActions>
-      <Button size="small" color="primary">
-        Share
-      </Button>
-    </CardActions>
-  </Card>
+    <>
+    <Container>
+        <h2>
+          {userData.property.length
+            ? `Viewing ${userData.property.length} saved ${userData.property.length === 1 ? 'property' : 'property'}:`
+            : 'You have no properties listed!'}
+        </h2>
+        <CardGroup>
+          {userData.property.map((property) => {
+            return (
+              <Card key={property._id} border='dark'>
+                {property.image ? <Card.Img src={property.image} alt={`The cover for ${property.title}`} variant='top' /> : null}
+                <Card.Body>
+                  <Card.Title>{property.title}</Card.Title>
+                  <p className='small'>Rent: {property.rent}</p>
+                  <Card.Text>{property.due}</Card.Text>
+                  {/* <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(property._id)}>
+                    Delete this Book!
+                  </Button> */}
+                </Card.Body>
+              </Card>
+            );
+          })}
+        </CardGroup>
+      </Container>
+    </>
   );
-}
+};
+
+export default PropertyCard;
