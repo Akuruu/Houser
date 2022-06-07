@@ -1,50 +1,44 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
 const propertySchema = new Schema({
   nickname: {
     type: String,
-    trim: true
+    trim: true,
   },
   street: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   city: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   state: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   zipcode: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   rent: {
     type: Number,
-    required: true
+    required: true,
   },
   image: {
-    type: String
+    type: String,
   },
   due: {
-    type: Date
+    type: Date,
   },
-  tenants: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ]
 });
 
-const Property = mongoose.model('Property', propertySchema);
+const Property = mongoose.model("Property", propertySchema);
 
 module.exports = Property;
