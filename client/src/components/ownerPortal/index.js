@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropertyCard from "../Properties";
 
 
-const Ownerportal = ({ properties, title }) => {
+const Ownerportal = ({ properties, title }) => { 
   if (!properties.length) {
     return <h3>No Properties Yet</h3>;
   }
