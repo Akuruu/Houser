@@ -2,14 +2,12 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
-
-
 const Home = () => {
   // const { loading, data } = useQuery(QUERY_USER);
   // const profiles = data?. || [];
 
   return (
-    <main>
+    <main className="flex-column">
       <div className="flex-row justify-center">
         <div className="">
           <div className="housertitle">Houser</div>
@@ -20,4 +18,3 @@ const Home = () => {
 };
 
 export default Home;
-
