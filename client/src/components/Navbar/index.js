@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Tab } from 'react-bootstrap';
-import Modal from 'react-bootstrap/Modal'
+import { Navbar, Nav, Container, Modal, Tab} from 'react-bootstrap';
+// import Modal from 'react-bootstrap/Modal';
 import SignUpForm from '../SignupForm';
 import LoginForm from '../LoginForm';
 import Auth from '../../utils/auth';
@@ -16,7 +16,7 @@ const AppNavbar = () => {
     <>
       <Navbar expand='lg'>
         <Container fluid>
-          <Navbar.Brand >
+        <Navbar.Brand as={Link} to='/'>
            Houser
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
