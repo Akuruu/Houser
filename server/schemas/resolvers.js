@@ -60,7 +60,7 @@ const resolvers = {
       if (context.user) {
         return User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $set: { contact: { input } } },
+          { $set: { contact: { ...input } } },
           { new: true, runValidators: true }
         );
       }
@@ -90,14 +90,24 @@ const resolvers = {
 
     addTenant: async (parent, { propertyId }, context) => {
       if (context.user) {
-        const property = await Property.findOneAndUpdate(
+        return Property.findOneAndUpdate(
           {
             _id: propertyId
           },
           { $addToSet: { tenants: context.user._id } },
           { new: true }
         );
-        return property;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    removeTenant: async (parent, { propertyId, userId }, context) => {
+      if (context.user) {
+        return Property.findOneAndUpdate(
+          { _id: propertyId },
+          { $pull: { tenants: userId } },
+          { new: true }
+        );
       }
       throw new AuthenticationError('You need to be logged in!');
     }
