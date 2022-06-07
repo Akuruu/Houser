@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PropertyCard from "../Properties";
-
+import PropertyCard from '../../components/Properties';
 
 const Ownerportal = ({ properties, title }) => {
   if (!properties.length) {
@@ -17,12 +16,11 @@ const Ownerportal = ({ properties, title }) => {
             <div key={property._id} className="col-12 col-xl-6">
               <PropertyCard />
 
-                {/* Use <Link> component to create an internal hyperlink reference. Use `to` prop to set the path instead of `href` */}
-                <Link
-                  className="btn btn-block btn-squared btn-light text-dark"
-                  to={`/owner/${property._id}`}>
-                </Link>
-              
+              {/* Use <Link> component to create an internal hyperlink reference. Use `to` prop to set the path instead of `href` */}
+              <Link
+                className="btn btn-block btn-squared btn-light text-dark"
+                to={`/owner/${property._id}`}
+              ></Link>
             </div>
           ))}
       </div>
