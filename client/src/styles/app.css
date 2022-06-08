@@ -99,8 +99,9 @@ footer {
 }
 
 .navlinks {
-  display: flex;
-  justify-content: space-between;
+margin-left: 85rem;
+justify-content: end;
+text-decoration: none;
 }
 
 .navdisplay {

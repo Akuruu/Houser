@@ -24,7 +24,7 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/' className='navlinks'>
+              <Nav.Link as={Link} to='/'>
               </Nav.Link >
               {Auth.loggedIn() ? (
                 <>
@@ -33,7 +33,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout} >Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)} className='navlinks'>Login/Sign Up</Nav.Link>
               )}
               
             </Nav>
