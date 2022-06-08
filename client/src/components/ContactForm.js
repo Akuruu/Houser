@@ -1,20 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
+import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client/react';
+import { QUERY_ME } from '../utils/queries';
 import { ADD_CONTACT } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const ContactForm = () => {
+  const { loading, data } = useQuery(QUERY_ME);
+
+  const userData = data?.me?.contact || {};
+
   const [contactFormData, setContactFormData] = useState({
-    firstName: '',
-    lastName: '',
-    street: '',
-    city: '',
-    state: '',
-    zipcode: '',
-    phone1: '',
-    phone2: ''
+    firstName: userData.firstName || '',
+    lastName: userData.lastName || '',
+    street: userData.street || '',
+    city: userData.city || '',
+    state: userData.state || '',
+    zipcode: userData.zipcode || '',
+    phone1: userData.phone1 || '',
+    phone2: userData.phone2 || ''
   });
+
+  useEffect(() => {
+    const userData = data?.me?.contact || {};
+
+    setContactFormData({
+      firstName: userData.firstName || '',
+      lastName: userData.lastName || '',
+      street: userData.street || '',
+      city: userData.city || '',
+      state: userData.state || '',
+      zipcode: userData.zipcode || '',
+      phone1: userData.phone1 || '',
+      phone2: userData.phone2 || ''
+    });
+  }, [data]);
 
   const [validated] = useState(false);
   const [addContact, { error }] = useMutation(ADD_CONTACT);
@@ -202,7 +223,7 @@ const ContactForm = () => {
           <Form.Control
             type="text"
             placeholder="Zipcode"
-            name="Zipcode"
+            name="zipcode"
             onChange={handleInputChange}
             value={contactFormData.zipcode}
             required
