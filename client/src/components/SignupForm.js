@@ -43,7 +43,11 @@ const SignupForm = () => {
       email: '',
       password: '',
     });
+
+    // alert("You have successfully signed up!");
   };
+
+  
 
   return (
     <>
@@ -97,7 +101,10 @@ const SignupForm = () => {
           type='submit'
           variant='success'>
           Submit
-        </Button>
+        </Button> 
+        {/* <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='success'>
+          Please navigate to login screen to login!
+        </Alert> */}
       </Form>
     </>
   );

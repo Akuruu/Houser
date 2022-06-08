@@ -1,5 +1,6 @@
 // see SignupForm.js for comments
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom'
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client/react';
 import { LOGIN_USER } from '../utils/mutations';
@@ -40,6 +41,10 @@ const LoginForm = () => {
       email: '',
       password: '',
     });
+
+    // redirects to owner portal for now upon logging in
+    window.location.replace("http://localhost:3000/ownerportal");
+
   };
 
   return (
@@ -80,8 +85,9 @@ const LoginForm = () => {
           Submit
         </Button>
       </Form>
+      
     </>
-  );
+  ) 
 };
 
 export default LoginForm;
