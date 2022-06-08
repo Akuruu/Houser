@@ -94,7 +94,7 @@ const SignupForm = () => {
         </Form.Group>
 
         <Form.Check>
-          <Form.Check.Label>Check here if you are the Landlord</Form.Check.Label>
+          <Form.Check.Label>Are you the Landlord?</Form.Check.Label>
           <Form.Check.Input
           type='checkbox'>
           </Form.Check.Input>
