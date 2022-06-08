@@ -94,6 +94,7 @@ footer {
   padding: 3rem;
   border: 3px solid #ccc;
   border-radius: 2px;
+  margin: auto;
 
   -webkit-font-smoothing: antialiased;
 }
