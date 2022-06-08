@@ -31,6 +31,7 @@ const typeDefs = gql`
     rent: Int
     image: String
     due: String
+    manager: [User]
     tenants: [User]
   }
 
@@ -46,7 +47,6 @@ const typeDefs = gql`
   }
 
   input inputProperty {
-    propertyId: Int
     nickname: String
     street: String
     city: String

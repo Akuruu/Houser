@@ -37,6 +37,12 @@ const propertySchema = new Schema({
   due: {
     type: Date
   },
+  manager: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  ],
   tenants: [
     {
       type: Schema.Types.ObjectId,
