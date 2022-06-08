@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Properties from "../Properties";
+import PropertyCard from "../Properties";
 import { Jumbotron, Container, Button } from 'react-bootstrap';
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../../utils/queries";
@@ -24,7 +24,7 @@ const Ownerportal = () => {
             </p>
       </div>
       <div>
-        <Properties />
+        <PropertyCard />
       </div>
     </div>
   );
