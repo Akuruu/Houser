@@ -94,6 +94,11 @@ footer {
   display: inline;
   z-index: 8;
 }
+
+.navlogo {
+  background: url(../assets/logotrans.png);
+}
+
 .bottom {
   color: var(--Green);
   font-size: 20pt;
