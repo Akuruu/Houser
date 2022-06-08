@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <main className="flex-column">
-      <div className="flex-row justify-center">
+      <div id="anime" className="flex-row justify-center">
         <div className="">
           <div className="housertitle">Houser</div>
         </div>
