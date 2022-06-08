@@ -60,6 +60,7 @@ main {
   margin: 0;
   padding: 0;
 }
+
 #anime {
   background-color: var(--background-color);
   width: 100vw;
@@ -94,7 +95,6 @@ footer {
   padding: 3rem;
   border: 3px solid #ccc;
   border-radius: 2px;
-
   -webkit-font-smoothing: antialiased;
 }
 

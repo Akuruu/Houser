@@ -6,15 +6,15 @@ const Home = () => {
   // const { loading, data } = useQuery(QUERY_USER);
   // const profiles = data?. || [];
 
-  return (
-    <main className="flex-column">
-      <div id="anime" className="flex-row justify-center">
-        <div>
-          <div className="housertitle">Houser</div>
-        </div>
+return (
+  <main id='anime' className="flex-column">
+    <div className="flex-row justify-center">
+      <div>
+        <div className="housertitle">Houser</div>
       </div>
-    </main>
-  );
+    </div>
+  </main>
+);
 };
 
 export default Home;
