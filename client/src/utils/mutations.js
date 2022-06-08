@@ -32,7 +32,7 @@ export const ADD_USER = gql`
 
 //ADD_PROPERTY
 export const ADD_PROPERTY = gql`
-  mutation addProperty($input: AddPropertyInput, $ma) {
+  mutation addProperty($input: AddPropertyInput) {
     addProperty(input: $input) {
       _id
       nickname
