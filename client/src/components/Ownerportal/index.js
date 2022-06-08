@@ -1,31 +1,30 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import PropertyCard from "../Properties";
+import Properties from "../Properties";
+import { Jumbotron, Container, Button } from 'react-bootstrap';
+import { useQuery } from "@apollo/client";
+import { QUERY_USER } from "../../utils/queries";
+// import Panel from 'react-bootstrap/Panel';
+import "../../styles/app.css";
 
 
-
-const Ownerportal = ({ properties, title }) => {
-  if (!properties.length) {
-    return <h3>No Properties Yet</h3>;
-  }
+const Ownerportal = () => {
+  // const {data} = useQuery(QUERY_USER);
+  // let user;
+  // if (data) {
+  //   user= data.user;
+  // }
 
   return (
     <div>
-      <h3 className="text-primary">George's Rental</h3>
-      <div className="flex-row justify-space-between my-4">
-        {/* {property &&
-          property.map((property) => (
-            <div key={property._id} className="col-12 col-xl-6"> */}
-              <PropertyCard />
-
-                {/* Use <Link> component to create an internal hyperlink reference. Use `to` prop to set the path instead of `href` */}
-                <Link
-                  className="btn btn-block btn-squared btn-light text-dark"
-                  to={`/owner`}>
-                </Link>
-              
-            {/* </div> */}
-          {/* ))} */}
+      <div fluid className="m-3">
+          <h1>Hello, George</h1>
+            <p>
+               Listed below is your rental properties.
+            </p>
+      </div>
+      <div>
+        <Properties />
       </div>
     </div>
   );
