@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Renterportal from './components/Renterportal';
 import Ownerportal from './components/Ownerportal';
+import Test from './pages/Test';
 import './styles/app.css';
 
 const httpLink = createHttpLink({
@@ -49,6 +50,7 @@ function App() {
           </div>
           <div className="flex-row">
             <Routes>
+              <Route path="/Test" element={<Test />} />
               <Route path="/" element={<Home />} />
               <Route path="/Renterportal" element={<Renterportal />} />
               <Route path="/Ownerportal" element={<Ownerportal />} />

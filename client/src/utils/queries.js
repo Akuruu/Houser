@@ -59,16 +59,6 @@ export const QUERY_USER = gql`
         rent
         image
         due
-        tenants {
-          firstName
-          lastName
-          street
-          city
-          state
-          zipcode
-          phone1
-          phone2
-        }
       }
     }
   }
@@ -149,16 +139,6 @@ export const QUERY_ME = gql`
         rent
         image
         due
-        tenants {
-          firstName
-          lastName
-          street
-          city
-          state
-          zipcode
-          phone1
-          phone2
-        }
       }
     }
   }
