@@ -43,7 +43,11 @@ const SignupForm = () => {
       email: '',
       password: '',
     });
+
+    // alert("You have successfully signed up!");
   };
+
+  
 
   return (
     <>
@@ -92,12 +96,23 @@ const SignupForm = () => {
           />
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
+
+        <Form.Check>
+          <Form.Check.Label>Are you the Landlord?</Form.Check.Label>
+          <Form.Check.Input
+          type='checkbox'>
+          </Form.Check.Input>
+        </Form.Check>
+
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
-        </Button>
+        </Button> 
+        {/* <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='success'>
+          Please navigate to login screen to login!
+        </Alert> */}
       </Form>
     </>
   );

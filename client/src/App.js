@@ -48,7 +48,7 @@ function App() {
           <div className='flex-row navcolor'>
             <Navbar />
           </div>
-          <div className="container flex-row">
+          <div className="flex-row">
             <Routes>
               <Route path="/Test" element={<Test />} />
               <Route path="/" element={<Home />} />
