@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { QUERY_ME } from '../../utils/queries';
 import { useQuery, useReactiveVar } from '@apollo/client';
 // import ReactDataGrid from "react-data-grid";
-import { Jumbotron, Container, Button } from 'react-bootstrap';
+import { Container, CardGroup, Card, Button } from 'react-bootstrap';
 // import Panel from 'react-bootstrap/Panel';
 import '../../styles/app.css';
 import Assets1 from '../../assets/blake-wheeler-zBHU08hdzhY-unsplash.jpg';
