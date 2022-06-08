@@ -31,6 +31,7 @@ const typeDefs = gql`
     rent: Int
     image: String
     due: String
+    tenants: [User]
   }
 
   input inputContact {
