@@ -14,28 +14,28 @@ const AppNavbar = () => {
 
   return (
     <>
+      <div>
+        <img src="../logotrans.png" height={50} />
+      </div>
       <Navbar expand='lg'>
         <Container fluid>
         <Navbar.Brand as={Link} to='/' >
-        <img src="../logotrans.png" height={100} />
-           
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               <Nav.Link as={Link} to='/'>
-                {/* Search For Books */}
-              </Nav.Link>
+              </Nav.Link >
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
-                    {/* See Your Books */}
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout} >Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)} className='navlinks'>Login/Sign Up</Nav.Link>
               )}
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
