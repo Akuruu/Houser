@@ -7,6 +7,7 @@ export const LOGIN_USER = gql`
       user {
         _id
         username
+        landlord
       }
     }
   }
@@ -31,7 +32,7 @@ export const ADD_USER = gql`
 
 //ADD_PROPERTY
 export const ADD_PROPERTY = gql`
-  mutation addProperty($input: AddPropertyInput) {
+  mutation addProperty($input: AddPropertyInput, $ma) {
     addProperty(input: $input) {
       _id
       nickname
