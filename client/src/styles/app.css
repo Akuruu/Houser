@@ -98,6 +98,11 @@ footer {
   -webkit-font-smoothing: antialiased;
 }
 
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+}
+
 .navdisplay {
   display: flex;
   justify-content: space-between;
