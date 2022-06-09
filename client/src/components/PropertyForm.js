@@ -42,8 +42,12 @@ const PropertyForm = () => {
     }
 
     try {
+      const modifiedData = { ...propertyFormData };
+
+      modifiedData.due = JSON.stringify(modifiedData.due);
+      console.log(typeof modifiedData.due);
       const { data } = await addProperty({
-        variables: { ...propertyFormData }
+        variables: { ...modifiedData }
       });
 
       Auth.login(data.login.token);

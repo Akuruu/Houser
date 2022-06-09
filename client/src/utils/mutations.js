@@ -49,7 +49,7 @@ export const ADD_PROPERTY = gql`
       rent
       image
       due
-      tenants
+      manager
     }
   }
 `;

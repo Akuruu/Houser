@@ -20,10 +20,6 @@ const SignupForm = () => {
 
   const [addUser, { error }] = useMutation(ADD_USER);
 
-  useEffect(() => {
-    console.log(userFormData);
-  }, [userFormData]);
-
   const handleInputChange = (event) => {
     console.log('please do not show up');
     const { name, value } = event.target;
