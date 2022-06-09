@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { QUERY_ME } from '../../utils/queries';
 import { useQuery, useReactiveVar } from '@apollo/client';
-import { Container, CardGroup, Card, Button } from 'react-bootstrap';
+import { Container, CardGroup, Card, Button, Form, Modal } from 'react-bootstrap';
 import '../../styles/app.css';
 import Assets1 from '../../assets/blake-wheeler-zBHU08hdzhY-unsplash.jpg';
 import PropertyCard from "../PropertyCard";
