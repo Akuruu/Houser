@@ -267,7 +267,7 @@ const ContactForm = () => {
             )
           }
           type="submit"
-          variant="success"
+          variant="primary"
         >
           Submit
         </Button>
