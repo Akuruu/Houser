@@ -53,14 +53,14 @@ const resolvers = {
 
     // Add a third argument to the resolver to access data in our `context`
     addProperty: async (parent, { input }, context) => {
-      console.log(input);
-      input.manager = context.user._id;
+      input.manager = { _id: context.user._id };
       const property = await Property.create({ ...input }).populate('manager');
       if (context.user) {
         User.findByIdAndUpdate(
           { _id: context.user._id },
           { $addToSet: { properties: property._id } }
         );
+
         return property;
       }
       throw new AuthenticationError('You need to be logged in!');

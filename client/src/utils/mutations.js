@@ -38,9 +38,8 @@ export const ADD_USER = gql`
 
 //ADD_PROPERTY
 export const ADD_PROPERTY = gql`
-  mutation addProperty($input: AddPropertyInput) {
+  mutation addProperty($input: inputProperty) {
     addProperty(input: $input) {
-      _id
       nickname
       street
       city
@@ -49,7 +48,6 @@ export const ADD_PROPERTY = gql`
       rent
       image
       due
-      manager
     }
   }
 `;
