@@ -125,6 +125,31 @@ text-decoration: none;
   color: var(--grey);
 }
 
+.renterbox {
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.firstName{
+  background-color: var(--Green);
+  width: 100vw;
+  padding: .75rem 1rem;
+  margin-left: 0;
+  margin-right: 3;
+}
+
+.affect {
+  border-top: 1pt solid #344964;
+  border-left: 1pt solid #344964;
+  border-bottom: 1pt solid #344964;
+  border-right: 1pt solid #344964;
+  box-shadow: 5pt 5px 5px #737171;
+  margin: 0.5rem;
+}
+.rentalbtn {
+  background-color: #344964 !important;
+}
+
 .StripeElement {
   margin: 15px auto;
   padding: 10px 12px;
@@ -178,3 +203,4 @@ h4.product-price {
   color: #777;
   font-weight: 500;
 }
+

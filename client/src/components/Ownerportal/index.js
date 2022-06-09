@@ -31,7 +31,7 @@ useEffect(()=> {
           <div>Loading...</div>
         ) : (
     <div>
-      <Container>
+  
         <div className="m-3">
           <h1>Hello, {userData.contact.firstName}</h1>
           <p>
@@ -39,7 +39,7 @@ useEffect(()=> {
           {/* The onclick is need for modal */}
           </p>
         </div>
-      </Container>
+
 
       <Container>
         <h2> Properties Listed
@@ -49,25 +49,25 @@ useEffect(()=> {
         </h2>
         <CardGroup className="flex-row">
           {userData.properties?.map((propertyData) => {
-            return (
+            {/* return (
              <PropertyCard />
-            );
-          //   return ( 
+            ); */}
+             return ( 
 
-          //     <Card className="col-5 p-4" key="" border='dark'>
-          //       <Card.Img src={Assets1} className= "rentalimage" alt="Rental Image" variant='top' /> 
-          //         <Card.Body>
-          //           <Card.Title>{propertyData.nickname}</Card.Title>
-          //           <p className='small'>{propertyData.due}</p>
-          //           <Card.Text>{propertyData.rent}</Card.Text>
-          //           <Card.Text>{propertyData.street}</Card.Text>
-          //           <Card.Text>{propertyData.state}, {propertyData.state} {propertyData.zip}</Card.Text>
-          //           <Button className='btn-block btn-danger' onClick= "">
-          //             I don't know what to put here
-          //           </Button>
-          //         </Card.Body>
-          //     </Card>
-          // ) 
+              <Card className="col-5 p-4 affect" key="" border='dark'>
+                <Card.Img src={Assets1} className= "rentalimage" alt="Rental Image" variant='top' /> 
+                  <Card.Body>
+                     <Card.Title>{propertyData.nickname}</Card.Title>
+                  <p className='small'>{propertyData.due}</p>
+                    <Card.Text>{propertyData.rent}</Card.Text>
+                   <Card.Text>{propertyData.street}</Card.Text>
+                    <Card.Text>{propertyData.state}, {propertyData.state}  {propertyData.zipcode}</Card.Text>
+                   <Button className='btn-block btn-danger' onClick= "">
+                     I don't know what to put here
+                  </Button>
+                  </Card.Body>
+               </Card>
+           ) 
           })}
 
         </CardGroup>   
