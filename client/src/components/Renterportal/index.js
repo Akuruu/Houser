@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { QUERY_ME } from '../../utils/queries';
 import { useQuery, useReactiveVar } from '@apollo/client';
 import { Container, CardGroup, Card, Button, Form, Modal } from 'react-bootstrap';
@@ -6,11 +6,13 @@ import '../../styles/app.css';
 import Assets1 from '../../assets/blake-wheeler-zBHU08hdzhY-unsplash.jpg';
 import PropertyCard from "../PropertyCard";
 
-const Renterportal = () => {
+const Renterportal = (props) => {
   const { loading, data} = useQuery(QUERY_ME)
 
   const userData = data?.me || [];
-
+  useEffect(()=> {
+      console.log(userData)
+    },[userData])
 
   const [show, setShow] = useState(false);
 
@@ -23,27 +25,44 @@ const Renterportal = () => {
           <div>Loading...</div>
         ) : (
     <div>
-      <Container>
-        <div className="m-3">
+      
+        <div className="m-3 firstName">
           <h1>Hello,  {userData.contact.firstName} </h1>
-          <p>
-          <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
-          {/* The onclick is need for modal */}
-          </p>
+            <p>
+              <Button variant="primary" className="rentalbtn" onClick={handleShow}>Edit Contact Info</Button>
+                {/* The onclick is need for modal */}
+            </p>
         </div>
-      </Container>
+     
    
       <Container className= "">
-        <CardGroup className="display-flex">
+        <CardGroup className="display-flex renterbox">
             {/* Identified by the tenant, the property they are attached to. */}
-          <PropertyCard />
+          {/* <PropertyCard /> */}
+
+          <Card className="col-5 p-4 m-3 affect" key="" border='dark'>
+            <Card.Img src={Assets1} className= "rentalimage" alt="Rental Image" variant='top' /> 
+              <Card.Body>
+                <Card.Title>{userData.properties[0].nickname}</Card.Title>
+                <p className='small'>{userData.properties[0].due}</p>
+                <Card.Text>Rent Amount: ${userData.properties[0].rent}</Card.Text>
+                <Card.Text>{userData.properties[0].street}</Card.Text>
+                <Card.Text>{userData.properties[0].state}, {userData.properties[0].state} {userData.properties[0].zipcode}</Card.Text>
+                <Button className='btn-block rentalbtn'>
+                  I don't know what to put here
+                </Button>
+                  {/* {isTenant ?  <a href="/stripe">Pay Rent</a> : <a href="property/:propertyId">Property/Tenant Info</a>} */}
+              </Card.Body>
+          </Card>
+
             {/* Property manager information */}
-          <Card className="col-5 p-4" key="" border='dark'>
+          <Card className="col-5 p-4 m-3 affect" border='dark'>
             <Card.Body>
               <Card.Title>Owner Info</Card.Title>
-                <p className='small'>{userData.properties.due}</p>
-                <Card.Text>{userData.properties.rent}</Card.Text>
-                  <Button className='btn-block btn-danger' onClick= "">
+                {/* <p className='small'>Due Date: {userData.properties[0].due}</p> */}
+                <p className='small'>Due Date: July 01, 2022</p>
+                <Card.Text>Rent Amount: {userData.properties[0].rent}</Card.Text>
+                  <Button className='btn-block rentalbtn' >
                     Contact Owner
                   </Button>
             </Card.Body>
@@ -52,7 +71,7 @@ const Renterportal = () => {
       </Container>
 
       <Container>
-        <a href="#" className="btn btn-primary">Pay Rent</a>
+        <a href="#" className="btn pay">Pay Rent</a>
       </Container>
 
     {/* Modal for edit contact info*/}
