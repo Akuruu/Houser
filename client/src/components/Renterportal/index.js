@@ -23,7 +23,8 @@ const Renterportal = () => {
         <div fluid className="m-3">
           <h1>Hello,  {userData.contact.firstName} </h1>
           <p>
-            <Button bsStyle="primary">Edit Contact Info</Button>
+          <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
+          {/* The onclick is need for modal */}
           </p>
         </div>
       </Container>
