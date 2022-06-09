@@ -59,6 +59,31 @@ const Renterportal = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="firstName"
+                placeholder="Sam"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="lastName"
+                placeholder="Smith"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
+              <Form.Label>Street</Form.Label>
+              <Form.Control
+                type="street"
+                placeholder="123 Main Street"
+                autoFocus
+              />
+            </Form.Group>
+            
 
     </>
 )
