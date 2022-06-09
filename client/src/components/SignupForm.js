@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -12,22 +12,24 @@ const SignupForm = () => {
     password: '',
     landlord: false
   });
+
   // set state for form validation
-  const [validated] = useState(false);
+  const [validated, setValidated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
   const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
+    console.log('please do not show up');
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
   const handleChecked = () => {
-    setUserFormData((prevState) => ({
-      ...prevState.userFormData,
-      landlord: !prevState.landlord
+    setUserFormData((userFormData) => ({
+      ...userFormData,
+      landlord: !userFormData.landlord
     }));
   };
 
@@ -42,10 +44,9 @@ const SignupForm = () => {
     }
 
     try {
-      console.log(userFormData);
       const { data } = await addUser({ variables: { ...userFormData } });
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token, data.addUser.user.landlord);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -55,7 +56,7 @@ const SignupForm = () => {
       username: '',
       email: '',
       password: '',
-      landlord: false
+      landlord: ''
     });
 
     // alert("You have successfully signed up!");
@@ -88,9 +89,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">
             Username is required!
           </Form.Control.Feedback>
-        </Form.Group>
 
-        <Form.Group>
           <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
             type="email"
@@ -103,9 +102,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">
             Email is required!
           </Form.Control.Feedback>
-        </Form.Group>
 
-        <Form.Group>
           <Form.Label htmlFor="password">Password</Form.Label>
           <Form.Control
             type="password"
@@ -118,16 +115,16 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">
             Password is required!
           </Form.Control.Feedback>
-        </Form.Group>
 
-        <Form.Check>
-          <Form.Check.Label>Are you the Landlord?</Form.Check.Label>
-          <Form.Check.Input
+          <Form.Check
+            as="input"
+            label="Property Manager"
             type="checkbox"
             onChange={handleChecked}
             name="landlord"
-          ></Form.Check.Input>
-        </Form.Check>
+            value={userFormData.landlord}
+          ></Form.Check>
+        </Form.Group>
 
         <Button
           disabled={

@@ -1,8 +1,8 @@
 import React from 'react';
-import ContactForm from '../components/ContactForm';
+import PropertyForm from '../components/PropertyForm';
 
 const Test = () => {
-  return <ContactForm />;
+  return <PropertyForm />;
 };
 
 export default Test;
