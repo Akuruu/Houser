@@ -4,7 +4,6 @@ import { useMutation } from '@apollo/client/react';
 import { ADD_PROPERTY } from '../utils/mutations';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Auth from '../utils/auth';
 
 const PropertyForm = () => {
   const [propertyFormData, setPropertyFormData] = useState({
@@ -13,7 +12,7 @@ const PropertyForm = () => {
     city: '',
     state: '',
     zipcode: '',
-    rent: '',
+    rent: 0,
     image: '',
     due: new Date()
   });
@@ -43,14 +42,15 @@ const PropertyForm = () => {
 
     try {
       const modifiedData = { ...propertyFormData };
+      modifiedData.rent = parseInt(modifiedData.rent);
+      // modifiedData.due = JSON.stringify(modifiedData.due);
+      console.log(modifiedData);
 
-      modifiedData.due = JSON.stringify(modifiedData.due);
-      console.log(typeof modifiedData.due);
-      const { data } = await addProperty({
-        variables: { ...modifiedData }
+      return await addProperty({
+        variables: { input: { ...modifiedData } }
       });
 
-      Auth.login(data.login.token);
+      // Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
