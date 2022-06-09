@@ -11,7 +11,6 @@ const LoginForm = () => {
   const [validated] = useState(false);
   const [login, { error }] = useMutation(LOGIN_USER);
   const [showAlert, setShowAlert] = useState(false);
-  let navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
