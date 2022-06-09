@@ -5,10 +5,6 @@ import "../styles";
 const PayRent = () => (
   <section>
     <div className="product">
-      {/* <img
-        src="https://i.imgur.com/EHyR2nP.png"
-        alt="The cover of Stubborn Attachments"
-      /> */}
       <div className="description">
       <h3>{Property.nickname}</h3>
       <h5>${Property.rent}</h5>
