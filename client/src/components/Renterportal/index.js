@@ -19,8 +19,12 @@ const Renterportal = () => {
 
   return (
     <>
+    {loading ? (
+          <div>Loading...</div>
+        ) : (
+    <div>
       <Container>
-        <div fluid className="m-3">
+        <div className="m-3">
           <h1>Hello,  {userData.contact.firstName} </h1>
           <p>
           <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
@@ -134,7 +138,10 @@ const Renterportal = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
+    )
+  };
+  </>
 )
 };
 export default Renterportal;
