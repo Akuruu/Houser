@@ -9,7 +9,7 @@ import Assets1 from '../../assets/digital-marketing-agency-ntwrk-g39p1kDjvSY-uns
 
 
 
-const PropertyCard = () => {
+const PropertyCard = (props) => {
     const { loading, data} = useQuery(QUERY_PROPERTY)
     
     const propertyData = data?.properties || {};
