@@ -50,6 +50,16 @@ const Renterportal = () => {
       <Container>
         <a href="#" className="btn btn-primary">Pay Rent</a>
       </Container>
+
+    {/* Modal for edit contact info*/}
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>My Information</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+
     </>
 )
 };
