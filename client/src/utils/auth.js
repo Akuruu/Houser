@@ -32,10 +32,12 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
+  login(idToken, landlord) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    landlord
+      ? window.location.assign('/Ownerportal')
+      : window.location.assign('/Renterportal');
   }
 
   logout() {
