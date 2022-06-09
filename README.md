@@ -24,7 +24,13 @@ Deployed version can be found [Here]()
 ![Renter Portal]()
 ![Owner Portal]()
 
-## Indepth analysis
+## Indepth Analysis
+
+For this project, we wanted to create a seamless management system for two types of users: renters and owners. Typically, when someone rents from a homeowner, they will send them rent to their personal accounts or they will have to login to an association portal to pay their rent- which is fine in theory. However, with this site, users can find their home information, whether they own it or are renting. Not only that, they can keep their contact information up to date in order to communicate with one another more efficiently. 
+
+So how did this come alive? We, as The HOA Association, came together to creat a MERN Stack Application. This means our application uses MongoDB, Express, React, and Node. We created two main folders, a client side and a server side, in order to execute their functionalities together. On the client side, we focuse on the components, styling, and other utilities that built the site using aspects of the server side. On the server side, we made sure to complete our queriies, models, authorization, shemas, and seeds which would allow data to connect to the client side of the application.
+
+
 
 
 
