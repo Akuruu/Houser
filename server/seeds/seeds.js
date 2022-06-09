@@ -22,6 +22,15 @@ db.once('open', async () => {
           }
         }
       );
+
+      const updatedProperty = await Property.findOneAndUpdate(
+        { _id: property._id },
+        {
+          $addToSet: {
+            manager: { _id: user._id }
+          }
+        }
+      );
     }
   } catch (err) {
     console.error(err);
