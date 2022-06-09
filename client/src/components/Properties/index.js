@@ -1,43 +1,51 @@
 import * as React from 'react';
 // import Card from 'react-bootstrap/Card';
 import { Container, CardGroup, Card, Button } from 'react-bootstrap';
-import { QUERY_PROPERTY } from '../../utils/queries';
+import { QUERY_PROPERTIES } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
+import PropertyCard from '../PropertyCard';
+import "../../styles/app.css";
 
-const PropertyCard = () => {
-  const { loading, data } = useQuery(QUERY_PROPERTY);
- 
-  const userData = data?.property || [];
+const Properties = () => {
+  const { loading, data } = useQuery(QUERY_PROPERTIES);
+
+  const ownerData = data?.properties || [];
 
 
   return (
     <>
     <Container>
         <h2>
-          {userData.property.length
-            ? `Viewing ${userData.property.length} saved ${userData.property.length === 1 ? 'property' : 'property'}:`
-            : 'You have no properties listed!'}
+           Propert Information  
         </h2>
         <CardGroup>
-          {userData.property.map((property) => {
+          
+             <PropertyCard />
+
+             {ownerData.properties.map((tenants) => {
             return (
-              <Card key={property._id} border='dark'>
-                {property.image ? <Card.Img src={property.image} alt={`The cover for ${property.title}`} variant='top' /> : null}
+             
+             <Card className="col-5 p-4" key="" border='dark'>
                 <Card.Body>
-                  <Card.Title>{property.title}</Card.Title>
-                  <p className='small'>Rent: {property.rent}</p>
-                  <Card.Text>{property.due}</Card.Text>
-                  {/* <Button className='btn-block btn-danger' onClick={() => handleDeleteBook(property._id)}>
+                  <Card.Title>Tenant Info</Card.Title>
+                  <Card.Title>{ownerData.tenants.firstName} {ownerData.tenants.lastName}</Card.Title>
+                  <p className='small'>{ownerData.due}</p>
+                  <Card.Text>{ownerData.rent}</Card.Text>
+                  <Card.Text>{ownerData.street}</Card.Text>
+                  <Card.Text>{ownerData.city} {ownerData.state} {ownerData.zipcode}</Card.Text>
+                  <Card.Text>{ownerData.phone1}</Card.Text>
+                  <Card.Text>{ownerData.phone2}</Card.Text>
+                  <Button className='btn-block btn-danger' onClick= "">
                     Delete this Book!
-                  </Button> */}
+                  </Button>
                 </Card.Body>
               </Card>
-            );
-          })}
-        </CardGroup>
-      </Container>
+               );
+              })}
+        </CardGroup>   
+    </Container> 
     </>
   );
 };
 
-export default PropertyCard;
+export default Properties;
