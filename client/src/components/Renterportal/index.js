@@ -63,81 +63,8 @@ const Renterportal = () => {
           <Modal.Title>My Information</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                type="firstName"
-                placeholder="Sam"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="lastName"
-                placeholder="Smith"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-              <Form.Label>Street</Form.Label>
-              <Form.Control
-                type="street"
-                placeholder="123 Main Street"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
-              <Form.Label>City</Form.Label>
-              <Form.Control
-                type="city"
-                placeholder="Orlando"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput5">
-              <Form.Label>State</Form.Label>
-              <Form.Control
-                type="state"
-                placeholder="Florida"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput6">
-              <Form.Label>Zipcode</Form.Label>
-              <Form.Control
-                type="zipcode"
-                placeholder="12345"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput7">
-              <Form.Label>Primary Phone Number</Form.Label>
-              <Form.Control
-                type="phone1"
-                placeholder="(555-555-1234)"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput7">
-              <Form.Label>Secondary Phone Number</Form.Label>
-              <Form.Control
-                type="phone2"
-                placeholder="(555-555-4321)"
-                autoFocus
-              />
-            </Form.Group>
-          </Form>
+          <ContactForm />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
     )
