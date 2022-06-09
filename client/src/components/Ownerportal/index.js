@@ -8,6 +8,7 @@ import { QUERY_ME } from "../../utils/queries";
 // import Panel from 'react-bootstrap/Panel';
 import "../../styles/app.css";
 import Assets1 from '../../assets/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg'
+import ContactForm from "../ContactForm";
 
 
 const Ownerportal = (props) => {
@@ -15,6 +16,12 @@ const Ownerportal = (props) => {
   const { loading, data} = useQuery(QUERY_ME)
    
   const userData = data?.me || [];
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
 useEffect(()=> {
   console.log(userData)
 },[userData])
@@ -28,7 +35,8 @@ useEffect(()=> {
         <div className="m-3">
           <h1>Hello, {userData.contact.firstName}</h1>
           <p>
-            <Button bsstyle="primary">Edit Contact Info</Button>
+             <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
+          {/* The onclick is need for modal */}
           </p>
         </div>
       </Container>
