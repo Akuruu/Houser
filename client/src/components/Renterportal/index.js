@@ -9,7 +9,7 @@ import PropertyCard from "../PropertyCard";
 const Renterportal = () => {
   const { loading, data} = useQuery(QUERY_ME)
 
-  const useData = data?.me || [];
+  const userData = data?.me || [];
 
 
   const [show, setShow] = useState(false);
