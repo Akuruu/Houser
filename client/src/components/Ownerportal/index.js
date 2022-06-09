@@ -73,6 +73,17 @@ useEffect(()=> {
         </CardGroup>   
 
       </Container>
+
+      {/* Modal for edit contact info*/}
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>My Information</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ContactForm />
+        </Modal.Body>
+      </Modal>
     </div>
     )
   }
