@@ -12,7 +12,7 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <br></br>
+        <br />
         <a className="bottom" href="https://github.com/Akuruu/Houser">
           &copy; {new Date().getFullYear()} The HOA Association{' '}
         </a>
