@@ -5,6 +5,7 @@ import { Container, CardGroup, Card, Button, Form, Modal } from 'react-bootstrap
 import '../../styles/app.css';
 import Assets1 from '../../assets/blake-wheeler-zBHU08hdzhY-unsplash.jpg';
 import PropertyCard from "../PropertyCard";
+import ContactForm from "../ContactForm";
 
 const Renterportal = () => {
   const { loading, data} = useQuery(QUERY_ME)
