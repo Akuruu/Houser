@@ -102,14 +102,14 @@ const Renterportal = () => {
           ) : (
             <div>
               <Card className="col-5 p-4 m-3 affect1" border="dark">
-                  <Card.Body>
-                    <Card.Title>Notice:</Card.Title>
-                      <Card.Text>
-                        You are not currently a tenant. Please contact your Property
-                        Manager with your username.
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
+                <Card.Body>
+                  <Card.Title>Notice:</Card.Title>
+                  <Card.Text>
+                    You are not currently a tenant. Please contact your Property
+                    Manager with your username.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </div>
           )}
 
@@ -132,7 +132,8 @@ const Renterportal = () => {
             </Modal.Header>
             <Modal.Body>
               {/* this will be payment form I think< /> */}
-
+            </Modal.Body>
+          </Modal>
         </div>
       )}
       ;
