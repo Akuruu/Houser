@@ -51,7 +51,7 @@ const Properties = (props) => {
                     <Card.Text>Rent Amount: {ownerData.rent}</Card.Text>
                     <Card.Text>{ownerData.street}</Card.Text>
                     <Card.Text>{ownerData.state}, {ownerData.state}  {ownerData.zipcode}</Card.Text>
-                    <Button variant="primary" onClick={handleShow}>Edit Property Info</Button>
+                    <Button className='btn-block rentalbtn' onClick={handleShow}>Edit Property Info</Button>
                   </Card.Body>
                </Card>
 
@@ -88,7 +88,7 @@ const Properties = (props) => {
           <PropertyForm />
         </Modal.Body>
       </Modal>
-      
+
     </div>
     )
   }
