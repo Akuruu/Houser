@@ -22,8 +22,9 @@ Presentation [Here](https://docs.google.com/presentation/d/18vwXjN5w2MQjb9Yaa02h
 ## Some pictures of the final product!
 
 <img src='./client/public/houser.png'>
-![Renter Portal]()
-![Owner Portal]()
+<img src='./client/public/property.jpg'>
+<img src='./client/public/propertylist.jpg'>
+<img src='./client/public/renter.jpg'>
 
 ## Indepth Analysis
 
