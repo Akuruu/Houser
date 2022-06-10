@@ -75,18 +75,6 @@ export const QUERY_PROPERTIES = gql`
     rent
     image
     due
-    manager {
-      contact {
-        firstName
-        lastName
-        street
-        city
-        state
-        zipcode
-        phone1
-        phone2
-      }
-    }
     tenants {
       contact {
         firstName
@@ -113,18 +101,6 @@ export const QUERY_PROPERTY = gql`
     rent
     image
     due
-    manager {
-      contact {
-        firstName
-        lastName
-        street
-        city
-        state
-        zipcode
-        phone1
-        phone2
-      }
-    }
     tenants {
       contact {
         firstName
@@ -136,6 +112,7 @@ export const QUERY_PROPERTY = gql`
         phone1
         phone2
       }
+    }
   }
 `;
 
