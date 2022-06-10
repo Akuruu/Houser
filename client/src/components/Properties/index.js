@@ -45,9 +45,7 @@ const Properties = (props) => {
                     <Card.Text>Rent Amount: {ownerData.rent}</Card.Text>
                     <Card.Text>{ownerData.street}</Card.Text>
                     <Card.Text>{ownerData.state}, {ownerData.state}  {ownerData.zipcode}</Card.Text>
-                      <Link className='btn btn-block rentalbtn' to="./propertyform">
-                     Edit Property Info
-                      </Link>
+                    <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
                   </Card.Body>
                </Card>
 
