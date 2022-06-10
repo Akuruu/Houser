@@ -32,7 +32,7 @@ useEffect(()=> {
         ) : (
     <div>
   
-        <div className="m-3">
+        <div className="m-3 firstName">
           <h1>Hello, {userData.contact.firstName}</h1>
           <p>
              <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
