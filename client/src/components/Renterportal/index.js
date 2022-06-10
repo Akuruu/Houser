@@ -19,10 +19,15 @@ const Renterportal = () => {
 
   const userData = data?.me || [];
 
+  // for modal 1- edit info button
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+//for modal 2, pay rent modal
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
 
   return (
     <>
