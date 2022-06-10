@@ -1,6 +1,6 @@
 import React, { useEffect, useState }from 'react';
 // import Card from 'react-bootstrap/Card';
-import { Container, CardGroup, Card, Button } from 'react-bootstrap';
+import { Container, CardGroup, Card, Button, Modal } from 'react-bootstrap';
 import { QUERY_PROPERTY } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import PropertyCard from '../PropertyCard';
 import "../../styles/app.css";
 import Assets1 from '../../assets/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg';
+import PropertyForm from '../PropertyForm';
 
 const Properties = (props) => {
   const {propertyId} = useParams();
@@ -76,6 +77,18 @@ const Properties = (props) => {
               })}
         </CardGroup>   
     </Container> 
+
+    {/* Modal for edit property info*/}
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>My Property</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <PropertyForm />
+        </Modal.Body>
+      </Modal>
+      
     </div>
     )
   }
