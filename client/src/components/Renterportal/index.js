@@ -78,6 +78,7 @@ const Renterportal = () => {
             </CardGroup>
           </Container>
 
+          {/* delete after linked in modal */}
           <Container>
             <a href="#" className="btn btn-primary">
               Pay Rent
