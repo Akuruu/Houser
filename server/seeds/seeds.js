@@ -33,12 +33,16 @@ db.once('open', async () => {
       );
     }
 
-    for (let i = userSeeds.length; i >= 0; i--) {
-      const updateTenant = await Property.findOneAndUpdate(
-        { _id: property._id },
+    const users = await User.find();
+    const reverseUsers = users.reverse();
+    const properties = await Property.find();
+
+    for (i = 0; i < reverseUsers.length; i++) {
+      const tenantUpdate = await Property.findOneAndUpdate(
+        { _id: properties[i]._id },
         {
           $addToSet: {
-            tenants: { _id: user._id }
+            tenants: { _id: reverseUsers[i]._id }
           }
         }
       );
