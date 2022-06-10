@@ -58,9 +58,7 @@ const Renterportal = () => {
                 <Card.Text>Rent Amount: ${userData.properties[0].rent}</Card.Text>
                 <Card.Text>{userData.properties[0].street}</Card.Text>
                 <Card.Text>{userData.properties[0].state}, {userData.properties[0].state} {userData.properties[0].zipcode}</Card.Text>
-                <Button className='btn-block rentalbtn'>
-                  Pay Rent
-                </Button>
+                <Button className='btn-block rentalbtn' onClick={handleShow2}>Pay Rent</Button>
                   {/* {isTenant ?  <a href="/stripe">Pay Rent</a> : <a href="property/:propertyId">Property/Tenant Info</a>} */}
               </Card.Body>
           </Card>
