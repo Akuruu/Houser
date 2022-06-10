@@ -1,6 +1,6 @@
-import React, { useEffect }from 'react';
+import React, { useEffect, useState }from 'react';
 // import Card from 'react-bootstrap/Card';
-import { Container, CardGroup, Card, Button } from 'react-bootstrap';
+import { Container, CardGroup, Card, Button, Modal } from 'react-bootstrap';
 import { QUERY_PROPERTY } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import PropertyCard from '../PropertyCard';
 import "../../styles/app.css";
 import Assets1 from '../../assets/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg';
+import PropertyForm from '../PropertyForm';
 
 const Properties = (props) => {
   const {propertyId} = useParams();
@@ -17,6 +18,11 @@ const Properties = (props) => {
   });
 
   const ownerData = data?.property || [];
+
+   //modal for edit property
+   const [show, setShow] = useState(false);
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
 
   useEffect(()=> {
     console.log(ownerData)
@@ -45,9 +51,7 @@ const Properties = (props) => {
                     <Card.Text>Rent Amount: {ownerData.rent}</Card.Text>
                     <Card.Text>{ownerData.street}</Card.Text>
                     <Card.Text>{ownerData.state}, {ownerData.state}  {ownerData.zipcode}</Card.Text>
-                      <Link className='btn btn-block rentalbtn' to="./propertyform">
-                     Edit Property Info
-                      </Link>
+                    <Button className='btn-block rentalbtn' onClick={handleShow}>Edit Property Info</Button>
                   </Card.Body>
                </Card>
 
@@ -73,6 +77,18 @@ const Properties = (props) => {
               })}
         </CardGroup>   
     </Container> 
+
+    {/* Modal for edit property info*/}
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>My Property</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <PropertyForm />
+        </Modal.Body>
+      </Modal>
+
     </div>
     )
   }

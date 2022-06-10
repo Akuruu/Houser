@@ -32,7 +32,7 @@ useEffect(()=> {
         ) : (
     <div>
   
-        <div className="m-3">
+        <div className="m-3 firstName">
           <h1>Hello, {userData.contact.firstName}</h1>
           <p>
              <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
@@ -63,7 +63,7 @@ useEffect(()=> {
                    <Card.Text>{propertyData.street}</Card.Text>
                     <Card.Text>{propertyData.state}, {propertyData.state}  {propertyData.zipcode}</Card.Text>
                     <Link className='btn btn-block rentalbtn' to={`/Ownerportal/${propertyData._id}`}>
-                     Proptery/Tenant Info
+                     Proptery and Tenant Info
                     </Link>
                    {/* <Button className='btn-block btn-danger' onClick= "">
                      I don't know what to put here

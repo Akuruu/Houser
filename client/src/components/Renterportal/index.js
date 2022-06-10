@@ -20,10 +20,15 @@ const Renterportal = () => {
 
   const userData = data?.me || [];
 
+  // for modal 1- edit info button
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+//for modal 2, pay rent modal
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
 
   return (
     <>
@@ -35,7 +40,7 @@ const Renterportal = () => {
         <div className="m-3 firstName">
           <h1>Hello,  {userData.contact.firstName} </h1>
             <p>
-              <Button variant="primary" className="rentalbtn" onClick={handleShow}>Edit Contact Info</Button>
+              <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
                 {/* The onclick is need for modal */}
             </p>
         </div>
@@ -54,9 +59,7 @@ const Renterportal = () => {
                 <Card.Text>Rent Amount: ${userData.properties[0].rent}</Card.Text>
                 <Card.Text>{userData.properties[0].street}</Card.Text>
                 <Card.Text>{userData.properties[0].state}, {userData.properties[0].state} {userData.properties[0].zipcode}</Card.Text>
-                <Button className='btn-block rentalbtn'>
-                  I don't know what to put here
-                </Button>
+                <Button className='btn-block rentalbtn' onClick={handleShow2}>Pay Rent</Button>
                   {/* {isTenant ?  <a href="/stripe">Pay Rent</a> : <a href="property/:propertyId">Property/Tenant Info</a>} */}
               </Card.Body>
           </Card>
@@ -67,10 +70,12 @@ const Renterportal = () => {
               <Card.Title>Owner Info</Card.Title>
                 {/* <p className='small'>Due Date: {userData.properties[0].due}</p> */}
                 <p className='small'>Due Date: July 01, 2022</p>
+                  <Button className='btn-block rentalbtn' href="mailto:{userData.email}" >
                 <Card.Text>Rent Amount: ${userData.properties[0].rent}</Card.Text>
                 <Card.Text>email: {userData.email}</Card.Text>
                 <Card.Text>phone: {userData.contact.phone1}</Card.Text>
                   <Button className='btn-block rentalbtn' >
+
                     Contact Owner
                   </Button>
                 </Card.Body>
@@ -78,9 +83,6 @@ const Renterportal = () => {
             </CardGroup>
           </Container>
 
-          <Container>
-          <Link to="/Payment" className="btn btn-primary">Pay Now</Link>
-          </Container>
 
           {/* Modal for edit contact info*/}
 
@@ -92,6 +94,17 @@ const Renterportal = () => {
               <ContactForm />
             </Modal.Body>
           </Modal>
+
+          {/* Modal for ___ */}
+{/* 
+          <Modal show={show2} onHide={handleClose2}>
+            <Modal.Header closeButton>
+              <Modal.Title>Pay Rent</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {/* this will be payment form I think< /> */}
+            {/* </Modal.Body>
+          // </Modal> */} 
         </div>
       )}
       ;
