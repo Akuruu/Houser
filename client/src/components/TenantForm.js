@@ -10,7 +10,7 @@ const TenantForm = () => {
   const [addTenant, { error }] = useMutation(ADD_TENANT);
   const [showAlert, setShowAlert] = useState(false);
   // const { propertyId } = useParams();
-  const propertyId = '62a0d2d3b40789a67a4f3cc8';
+  const { propertyId } = useParams();
 
   const handleInputChange = (event) => {
     const { value } = event.target;

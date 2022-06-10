@@ -143,3 +143,11 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_PAYMENT = gql`
+  query payment($id: String!, $propertyId: ID!) {
+    id
+    propertyId
+    due
+  }
+`;

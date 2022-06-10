@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Property, Contact } = require('../models');
 const { signToken } = require('../utils/auth');
+const stripe = require('stripe')('testkey');
 
 const resolvers = {
   Query: {
@@ -26,6 +27,30 @@ const resolvers = {
 
     property: async (parent, { propertyId }) => {
       return Property.findOne({ _id: propertyId }).populate('tenants');
+    },
+
+    payment: async (parent, { id, propertyId }, context) => {
+      const property = await Property.findOne({ propertyId });
+      const dateUpdate = property.due.setMonth(property.due.getMonth() + 1);
+      const payment = await stripe.paymentIntents.create({
+        amount: property.rent,
+        currency: 'USD',
+        payment_method: id,
+        name: 'Houser',
+        description: 'Houser Rent Payment',
+        confirm: true
+      });
+
+      if (payment.confirm) {
+        const updatedProperty = await Property.findByIdAndUpdate(
+          { propertyId },
+          { $set: { due: dateUpdate } },
+          { new: true }
+        );
+        return updatedProperty;
+      }
+
+      return property;
     }
   },
 
