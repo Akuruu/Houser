@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import PropertyCard from "../Properties";
-import { Container, CardGroup, Card, Button } from 'react-bootstrap';
+import { Container, CardGroup, Card, Button, Modal } from 'react-bootstrap';
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../../utils/queries";
 import { QUERY_ME } from "../../utils/queries";
