@@ -95,7 +95,7 @@ export const REMOVE_USER = gql`
 `;
 
 export const ADD_TENANT = gql`
-  mutation addTenant($propertyId: String!, $username: String!) {
+  mutation addTenant($propertyId: ID!, $username: String!) {
     addTenant(propertyId: $propertyId, username: $username) {
       _id
       nickname
@@ -110,7 +110,6 @@ export const ADD_TENANT = gql`
         _id
         username
         contact {
-          _id
           firstName
           lastName
           street
