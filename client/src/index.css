@@ -1198,6 +1198,10 @@ label form [type='radio'] {
   width: 92%;
 }
 
+.payment {
+ border:#065b83
+}
+
 /* FLEX CONTENT */
 .flex-row {
   display: flex;

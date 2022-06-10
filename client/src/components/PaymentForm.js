@@ -42,10 +42,11 @@ const PaymentForm = () => {
   };
 
   return (
-    <div className='container' id='payment'>
+    <div className='container mt-5 p-5'>
+    <div>
       <h1>Make a Payment</h1>
       <CardElement />
-      <Button onClick={handleSubmit}>Pay Now</Button>
+      <Button onClick={handleSubmit} className='card'>Pay Now</Button>
       <Alert
         dismissible
         onClose={() => setShowAlert(false)}
@@ -54,6 +55,7 @@ const PaymentForm = () => {
       >
         Please Enter a Valid Payment Option
       </Alert>
+    </div>
     </div>
   );
 };
