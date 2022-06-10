@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { QUERY_ME } from '../../utils/queries';
 import { useQuery, useReactiveVar } from '@apollo/client';
 import {
@@ -66,7 +67,9 @@ const Renterportal = () => {
               <Card.Title>Owner Info</Card.Title>
                 {/* <p className='small'>Due Date: {userData.properties[0].due}</p> */}
                 <p className='small'>Due Date: July 01, 2022</p>
-                <Card.Text>Rent Amount: {userData.properties[0].rent}</Card.Text>
+                <Card.Text>Rent Amount: ${userData.properties[0].rent}</Card.Text>
+                <Card.Text>email: {userData.email}</Card.Text>
+                <Card.Text>phone: {userData.contact.phone1}</Card.Text>
                   <Button className='btn-block rentalbtn' >
                     Contact Owner
                   </Button>
@@ -76,9 +79,7 @@ const Renterportal = () => {
           </Container>
 
           <Container>
-            <a href="#" className="btn btn-primary">
-              Pay Rent
-            </a>
+          <Link to="/Payment" className="btn btn-primary">Pay Now</Link>
           </Container>
 
           {/* Modal for edit contact info*/}

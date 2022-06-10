@@ -65,7 +65,7 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_PROPERTIES = gql`
-  query properties {
+  query properties ($propertyId: ID!) { 
     _id
     nickname
     street

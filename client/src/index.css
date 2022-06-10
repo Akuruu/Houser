@@ -48,7 +48,7 @@ hr {
   /* 1 */
   height: 0;
   /* 1 */
-  overflow: visible;
+  overflow: auto;
   /* 2 */
 }
 
@@ -170,7 +170,7 @@ textarea {
 button,
 input {
   /* 1 */
-  overflow: visible;
+  overflow: auto;
 }
 
 /**
