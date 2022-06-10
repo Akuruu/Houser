@@ -65,26 +65,28 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_PROPERTIES = gql`
-  query properties ($propertyId: ID!) { 
-    _id
-    nickname
-    street
-    city
-    state
-    zipcode
-    rent
-    image
-    due
-    tenants {
-      contact {
-        firstName
-        lastName
-        street
-        city
-        state
-        zipcode
-        phone1
-        phone2
+  query properties {
+    properties {
+      _id
+      nickname
+      street
+      city
+      state
+      zipcode
+      rent
+      image
+      due
+      tenants {
+        contact {
+          firstName
+          lastName
+          street
+          city
+          state
+          zipcode
+          phone1
+          phone2
+        }
       }
     }
   }
@@ -92,25 +94,27 @@ export const QUERY_PROPERTIES = gql`
 
 export const QUERY_PROPERTY = gql`
   query property($propertyId: ID!) {
-    _id
-    nickname
-    street
-    city
-    state
-    zipcode
-    rent
-    image
-    due
-    tenants {
-      contact {
-        firstName
-        lastName
-        street
-        city
-        state
-        zipcode
-        phone1
-        phone2
+    property(propertyId: $propertyId) {
+      _id
+      nickname
+      street
+      city
+      state
+      zipcode
+      rent
+      image
+      due
+      tenants {
+        contact {
+          firstName
+          lastName
+          street
+          city
+          state
+          zipcode
+          phone1
+          phone2
+        }
       }
     }
   }
