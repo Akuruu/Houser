@@ -64,18 +64,19 @@ const Properties = () => {
                 return (
                   <Card className="col-5 p-4" key="" border="dark">
                     <Card.Body>
-                      <Card.Title>Tenant Info</Card.Title>
+                      <Card.Title>Tenants:</Card.Title>
                       <Card.Title>
-                        {tenants.firstName} {tenants.lastName}
+                        {tenants.contact.firstName} {tenants.contact.lastName}
                       </Card.Title>
                       <p className="small">{ownerData.due}</p>
-                      <Card.Text>{ownerData.rent}</Card.Text>
-                      <Card.Text>{tenants.street}</Card.Text>
+
+                      <Card.Text>{tenants.contact.street}</Card.Text>
                       <Card.Text>
-                        {tenants.city} {tenants.state} {tenants.zipcode}
+                        {tenants.contact.city} {tenants.contact.state}{' '}
+                        {tenants.contact.zipcode}
                       </Card.Text>
-                      <Card.Text>{tenants.phone1}</Card.Text>
-                      <Card.Text>{tenants.phone2}</Card.Text>
+                      <Card.Text>{tenants.contact.phone1}</Card.Text>
+                      <Card.Text>{tenants.contact.phone2}</Card.Text>
                       <Button className="btn-block btn-danger" onClick="">
                         Add Tenant
                       </Button>
