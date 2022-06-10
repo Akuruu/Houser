@@ -17,9 +17,7 @@ Presentation [Here](https://docs.google.com/presentation/d/18vwXjN5w2MQjb9Yaa02h
 
 ## Please see the video down below for the demo:
 
-![]()
-![]()
-![]()
+![demo](./client/public/houser.gif)
 
 
 [Link to video](https://drive.google.com/file/d/1lkAfE6zV2-PMGtM7ky05xdEwsy-KepUE/view)
