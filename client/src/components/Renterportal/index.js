@@ -34,7 +34,7 @@ const Renterportal = () => {
         <div className="m-3 firstName">
           <h1>Hello,  {userData.contact.firstName} </h1>
             <p>
-              <Button variant="primary" className="rentalbtn" onClick={handleShow}>Edit Contact Info</Button>
+              <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
                 {/* The onclick is need for modal */}
             </p>
         </div>
