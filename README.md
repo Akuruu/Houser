@@ -3,6 +3,7 @@
 *Houser is rental management system where property owners can manage which properties they're renting out and tenants can access their landlord's contact information using their respective portals.*
 
 Deployed version can be found [Here]()
+Presentation [Here](https://docs.google.com/presentation/d/18vwXjN5w2MQjb9Yaa02hm0XzRPREmcZd_6lCnQBEINM/edit?usp=sharing)
 
  ## How to use this site:
 1. On the startup page, you will be greeted with a moving homescreen. This will be the only page you see unless you login.
@@ -21,8 +22,9 @@ Deployed version can be found [Here]()
 ## Some pictures of the final product!
 
 <img src='./client/public/houser.png'>
-![Renter Portal]()
-![Owner Portal]()
+<img src='./client/public/property.jpg'>
+<img src='./client/public/propertylist.jpg'>
+<img src='./client/public/renter.jpg'>
 
 ## Indepth Analysis
 
