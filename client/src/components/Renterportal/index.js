@@ -91,6 +91,17 @@ const Renterportal = () => {
               <ContactForm />
             </Modal.Body>
           </Modal>
+
+          {/* Modal for pay rent*/}
+
+          <Modal show={show2} onHide={handleClose2}>
+            <Modal.Header closeButton>
+              <Modal.Title>Pay Rent</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {/* this will be payment form I think< /> */}
+            </Modal.Body>
+          </Modal>
         </div>
       )}
       ;
