@@ -54,7 +54,7 @@ const Renterportal = () => {
                 <Card.Text>{userData.properties[0].street}</Card.Text>
                 <Card.Text>{userData.properties[0].state}, {userData.properties[0].state} {userData.properties[0].zipcode}</Card.Text>
                 <Button className='btn-block rentalbtn'>
-                  I don't know what to put here
+                  Pay Rent
                 </Button>
                   {/* {isTenant ?  <a href="/stripe">Pay Rent</a> : <a href="property/:propertyId">Property/Tenant Info</a>} */}
               </Card.Body>
@@ -75,6 +75,11 @@ const Renterportal = () => {
             </CardGroup>
           </Container>
 
+          <Container>
+            <a href="#" className="btn btn-primary">
+              Pay Rent
+            </a>
+          </Container>
 
           {/* Modal for edit contact info*/}
 
