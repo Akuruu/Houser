@@ -75,11 +75,6 @@ const Renterportal = () => {
             </CardGroup>
           </Container>
 
-          <Container>
-            <a href="#" className="btn btn-primary">
-              Pay Rent
-            </a>
-          </Container>
 
           {/* Modal for edit contact info*/}
 
