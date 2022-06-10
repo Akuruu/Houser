@@ -55,6 +55,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/Renterportal" element={<Renterportal />} />
               <Route path="/Ownerportal" element={<Ownerportal />} />
+              <Route path="/Payment" element={<StripeContainer />} />
             </Routes>
           </div>
           <div className="flex-row">
