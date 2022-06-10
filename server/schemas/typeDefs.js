@@ -71,7 +71,7 @@ const typeDefs = gql`
     users: [User]
     user(userId: ID!): User
     properties: [Property]
-    property(propertyId: ID!): User
+    property(propertyId: ID!): Property
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: User
     payment(input: inputPayment): Property
