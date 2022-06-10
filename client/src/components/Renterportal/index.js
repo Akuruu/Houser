@@ -70,9 +70,7 @@ const Renterportal = () => {
                       {userData.properties[0].state}{' '}
                       {userData.properties[0].zipcode}
                     </Card.Text>
-                    <Link to="/Payment" className="btn rentalbtn">
-                      Pay Rent
-                    </Link>
+                    <Link to="/Payment" className="btn rentalbtn">Pay Rent</Link>
                     {/* {isTenant ?  <a href="/stripe">Pay Rent</a> : <a href="property/:propertyId">Property/Tenant Info</a>} */}
                   </Card.Body>
                 </Card>
@@ -126,14 +124,14 @@ const Renterportal = () => {
 
           {/* Modal for ___ */}
 
-          <Modal show={show2} onHide={handleClose2}>
+          {/* <Modal show={show2} onHide={handleClose2}>
             <Modal.Header closeButton>
               <Modal.Title>Pay Rent</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body> */}
               {/* this will be payment form I think< /> */}
-            </Modal.Body>
-          </Modal>
+            {/* </Modal.Body>
+          </Modal> */}
         </div>
       )}
       ;
