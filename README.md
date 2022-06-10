@@ -21,6 +21,10 @@ Presentation [Here](https://docs.google.com/presentation/d/18vwXjN5w2MQjb9Yaa02h
 ![]()
 ![]()
 
+
+[Link to video](https://drive.google.com/file/d/1lkAfE6zV2-PMGtM7ky05xdEwsy-KepUE/view)
+
+
 ## Some pictures of the final product!
 
 <img src='./client/public/houser.png'>
