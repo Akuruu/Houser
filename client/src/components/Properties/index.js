@@ -38,9 +38,11 @@ const Properties = () => {
         <div>Loading...</div>
       ) : (
         <div>
-          <Container>
-            <h2>Property Information</h2>
-            <CardGroup>
+            <div className="m-3 firstName">
+              <h2>Property Information</h2>
+            </div>
+            <Container>
+            <CardGroup className="display-flex renterbox">
               {/* <PropertyCard /> */}
 
               <Card className="col-5 p-4 affect" border="dark">
@@ -66,7 +68,7 @@ const Properties = () => {
 
               {ownerData.tenants?.map((tenants) => {
                 return (
-                  <Card className="col-5 p-4" key="" border="dark">
+                  <Card className="col-5 p-4 m-3 affect" border="dark">
                     <Card.Body>
                       <Card.Title>Tenants:</Card.Title>
                       <Card.Title>
@@ -82,7 +84,7 @@ const Properties = () => {
                       <Card.Text>{tenants.contact.phone1}</Card.Text>
                       <Card.Text>{tenants.contact.phone2}</Card.Text>
                       <Button
-                        className="btn-block btn-danger"
+                        className="btn-block rentalbtn"
                         onClick={handleShow2}
                       >
                         Add Tenant

@@ -63,7 +63,7 @@ useEffect(()=> {
                    <Card.Text>{propertyData.street}</Card.Text>
                     <Card.Text>{propertyData.state}, {propertyData.state}  {propertyData.zipcode}</Card.Text>
                     <Link className='btn btn-block rentalbtn' to={`/Ownerportal/${propertyData._id}`}>
-                     Proptery and Tenant Info
+                     Property and Tenant Info
                     </Link>
                    {/* <Button className='btn-block btn-danger' onClick= "">
                      I don't know what to put here

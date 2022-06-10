@@ -28,7 +28,15 @@ db.once('open', async () => {
         {
           $addToSet: {
             manager: { _id: user._id }
-          },
+          }
+        }
+      );
+    }
+
+    for (let i = userSeeds.length; i >= 0; i--) {
+      const updateTenant = await Property.findOneAndUpdate(
+        { _id: property._id },
+        {
           $addToSet: {
             tenants: { _id: user._id }
           }
