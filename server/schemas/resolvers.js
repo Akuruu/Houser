@@ -29,14 +29,13 @@ const resolvers = {
       return Property.findOne({ _id: propertyId }).populate('tenants');
     },
 
-    payment: async (parent, { input }, context) => {
-      const propertyId = input.propertyId;
+    payment: async (parent, { id, propertyId }, context) => {
       const property = await Property.findOne({ propertyId });
       const dateUpdate = property.due.setMonth(property.due.getMonth() + 1);
       const payment = await stripe.paymentIntents.create({
         amount: property.rent,
         currency: 'USD',
-        payment_method: input.id,
+        payment_method: id,
         name: 'Houser',
         description: 'Houser Rent Payment',
         confirm: true

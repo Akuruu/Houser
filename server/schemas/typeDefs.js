@@ -60,7 +60,6 @@ const typeDefs = gql`
   input inputPayment {
     propertyId: String
     id: String
-    amount: Int
   }
 
   type Auth {

@@ -16,13 +16,6 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Renterportal from './components/Renterportal';
 import Ownerportal from './components/Ownerportal';
-//stripe
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import CheckoutForm from './components/CheckoutForm';
-const stripePromise = loadStripe(
-  'pk_test_51L8mxwGjPT5TzhsrgAnNQn9oljKi7JKrQU9ZsfnZJvJ3O5DoeFM7FUdRvTkDrQ5ErwKedjXeOqRRPzBf21IAKqUr00h8FQYBH2'
-);
 
 import Test from './pages/Test';
 import './styles/app.css';

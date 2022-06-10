@@ -4,7 +4,6 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_PAYMENT } from '../utils/queries';
 import { useParams } from 'react-router-dom';
-import { set } from 'mongoose';
 
 const PaymentForm = () => {
   const stripe = useStripe();
