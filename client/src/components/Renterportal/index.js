@@ -104,7 +104,7 @@ const Renterportal = () => {
             <Modal.Body>
               {/* this will be payment form I think< /> */}
             {/* </Modal.Body>
-          // </Modal> */} 
+           </Modal> */} 
         </div>
       )}
       ;
