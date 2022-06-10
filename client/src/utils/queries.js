@@ -76,14 +76,16 @@ export const QUERY_PROPERTIES = gql`
     image
     due
     tenants {
-      firstName
-      lastName
-      street
-      city
-      state
-      zipcode
-      phone1
-      phone2
+      contact {
+        firstName
+        lastName
+        street
+        city
+        state
+        zipcode
+        phone1
+        phone2
+      }
     }
   }
 `;
@@ -100,14 +102,16 @@ export const QUERY_PROPERTY = gql`
     image
     due
     tenants {
-      firstName
-      lastName
-      street
-      city
-      state
-      zipcode
-      phone1
-      phone2
+      contact {
+        firstName
+        lastName
+        street
+        city
+        state
+        zipcode
+        phone1
+        phone2
+      }
     }
   }
 `;
