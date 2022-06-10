@@ -59,7 +59,7 @@ const Renterportal = () => {
                 <Card.Text>Rent Amount: ${userData.properties[0].rent}</Card.Text>
                 <Card.Text>{userData.properties[0].street}</Card.Text>
                 <Card.Text>{userData.properties[0].state}, {userData.properties[0].state} {userData.properties[0].zipcode}</Card.Text>
-                <Button className='btn-block rentalbtn' onClick={handleShow2}>Pay Rent</Button>
+                <Link to="/Payment" className="btn rentalbtn">Pay Rent</Link>
                   {/* {isTenant ?  <a href="/stripe">Pay Rent</a> : <a href="property/:propertyId">Property/Tenant Info</a>} */}
               </Card.Body>
           </Card>
@@ -70,11 +70,11 @@ const Renterportal = () => {
               <Card.Title>Owner Info</Card.Title>
                 {/* <p className='small'>Due Date: {userData.properties[0].due}</p> */}
                 <p className='small'>Due Date: July 01, 2022</p>
-                  <Button className='btn-block rentalbtn' href="mailto:{userData.email}" ></Button>
+
                 <Card.Text>Rent Amount: ${userData.properties[0].rent}</Card.Text>
                 <Card.Text>email: {userData.email}</Card.Text>
                 <Card.Text>phone: {userData.contact.phone1}</Card.Text>
-                  <Button className='btn-block rentalbtn' >
+                  <Button className='btn-block rentalbtn' href="mailto:{userData.email}" >
 
                     Contact Owner
                   </Button>
