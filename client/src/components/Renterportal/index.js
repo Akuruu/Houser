@@ -68,6 +68,8 @@ const Renterportal = () => {
                 {/* <p className='small'>Due Date: {userData.properties[0].due}</p> */}
                 <p className='small'>Due Date: July 01, 2022</p>
                 <Card.Text>Rent Amount: {userData.properties[0].rent}</Card.Text>
+                <Card.Text>email: {userData.email}</Card.Text>
+                <Card.Text>phone: {userData.contact.phone1}</Card.Text>
                   <Button className='btn-block rentalbtn' >
                     Contact Owner
                   </Button>
