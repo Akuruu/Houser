@@ -57,6 +57,12 @@ const typeDefs = gql`
     due: String
   }
 
+  input inputPayment {
+    propertyId: String
+    id: String
+    amount: Int
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -69,6 +75,7 @@ const typeDefs = gql`
     property(propertyId: ID!): User
     # Because we have the context functionality in place to check a JWT and decode its data, we can use a query that will always find and return the logged in user's data
     me: User
+    payment(input: inputPayment): Property
   }
 
   type Mutation {

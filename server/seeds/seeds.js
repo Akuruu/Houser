@@ -28,6 +28,9 @@ db.once('open', async () => {
         {
           $addToSet: {
             manager: { _id: user._id }
+          },
+          $addToSet: {
+            tenants: { _id: user._id }
           }
         }
       );

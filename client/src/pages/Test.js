@@ -1,8 +1,8 @@
 import React from 'react';
-import PropertyForm from '../components/PropertyForm';
+import StripeContainer from '../components/StripeContainer';
 
 const Test = () => {
-  return <PropertyForm />;
+  return <StripeContainer />;
 };
 
 export default Test;
