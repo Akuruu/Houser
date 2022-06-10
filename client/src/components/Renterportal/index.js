@@ -70,7 +70,7 @@ const Renterportal = () => {
                 {/* <p className='small'>Due Date: {userData.properties[0].due}</p> */}
                 <p className='small'>Due Date: July 01, 2022</p>
                 <Card.Text>Rent Amount: {userData.properties[0].rent}</Card.Text>
-                  <Button className='btn-block rentalbtn' >
+                  <Button className='btn-block rentalbtn' href="mailto:{userData.email}" >
                     Contact Owner
                   </Button>
                 </Card.Body>
@@ -78,12 +78,7 @@ const Renterportal = () => {
             </CardGroup>
           </Container>
 
-          {/* delete after linked in modal */}
-          <Container>
-            <a href="#" className="btn btn-primary">
-              Pay Rent
-            </a>
-          </Container>
+        
 
           {/* Modal for edit contact info*/}
 
@@ -96,16 +91,16 @@ const Renterportal = () => {
             </Modal.Body>
           </Modal>
 
-          {/* Modal for pay rent*/}
-
+          {/* Modal for ___ */}
+{/* 
           <Modal show={show2} onHide={handleClose2}>
             <Modal.Header closeButton>
               <Modal.Title>Pay Rent</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               {/* this will be payment form I think< /> */}
-            </Modal.Body>
-          </Modal>
+            {/* </Modal.Body>
+          // </Modal> */} 
         </div>
       )}
       ;
