@@ -42,7 +42,7 @@ const PaymentForm = () => {
   };
 
   return (
-    <div>
+    <div className='container' id='payment'>
       <h1>Make a Payment</h1>
       <CardElement />
       <Button onClick={handleSubmit}>Pay Now</Button>

@@ -1,28 +1,57 @@
-import * as React from 'react';
+import React, { useEffect }from 'react';
 // import Card from 'react-bootstrap/Card';
 import { Container, CardGroup, Card, Button } from 'react-bootstrap';
-import { QUERY_PROPERTIES } from '../../utils/queries';
+import { QUERY_PROPERTY } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropertyCard from '../PropertyCard';
 import "../../styles/app.css";
+import Assets1 from '../../assets/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg';
 
-const Properties = () => {
-  const { loading, data } = useQuery(QUERY_PROPERTIES);
+const Properties = (props) => {
+  const {propertyId} = useParams();
+  const { loading, data } = useQuery(QUERY_PROPERTY, {
+    // pass URL parameter
+    variables: { propertyId: propertyId },
+  });
 
-  const ownerData = data?.properties || [];
+  const ownerData = data?.property || [];
 
+  useEffect(()=> {
+    console.log(ownerData)
+  },[ownerData])
 
   return (
     <>
+    {loading ? (
+          <div>Loading...</div>
+        ) : (
+    <div>
     <Container>
         <h2>
-           Propert Information  
+           Property Information  
+           {ownerData.nickname}
         </h2>
         <CardGroup>
           
-             <PropertyCard />
+             {/* <PropertyCard /> */}
 
-             {ownerData.properties.map((tenants) => {
+             <Card className="col-5 p-4 affect" border='dark'>
+                <Card.Img src={Assets1} className= "rentalimage" alt="Rental Image" variant='top' /> 
+                  <Card.Body>
+                     <Card.Title>{ownerData.nickname}</Card.Title>
+                    {/* <p className='small'>{ownerData.due}</p> */}
+                    <Card.Text>Rent Amount: {ownerData.rent}</Card.Text>
+                    <Card.Text>{ownerData.street}</Card.Text>
+                    <Card.Text>{ownerData.state}, {ownerData.state}  {ownerData.zipcode}</Card.Text>
+                      <Link className='btn btn-block rentalbtn' to="./propertyform">
+                     Edit Property Info
+                      </Link>
+                  </Card.Body>
+               </Card>
+
+             {ownerData.properties?.map((tenants) => {
             return (
              
              <Card className="col-5 p-4" key="" border='dark'>
@@ -44,6 +73,9 @@ const Properties = () => {
               })}
         </CardGroup>   
     </Container> 
+    </div>
+    )
+  }
     </>
   );
 };

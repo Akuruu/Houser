@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { QUERY_ME } from '../../utils/queries';
 import { useQuery, useReactiveVar } from '@apollo/client';
 import {
@@ -76,9 +77,7 @@ const Renterportal = () => {
           </Container>
 
           <Container>
-            <a href="#" className="btn btn-primary">
-              Pay Rent
-            </a>
+          <Link to="/Payment" className="btn btn-primary">Pay Now</Link>
           </Container>
 
           {/* Modal for edit contact info*/}

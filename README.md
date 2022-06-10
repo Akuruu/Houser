@@ -20,7 +20,7 @@ Deployed version can be found [Here]()
 
 ## Some pictures of the final product!
 
-<img src='../Houser/client/public/houser.png'>
+<img src='./client/public/houser.png'>
 ![Renter Portal]()
 ![Owner Portal]()
 
