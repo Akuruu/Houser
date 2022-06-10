@@ -87,7 +87,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addProperty(input: inputProperty): Property
     addContact(input: inputContact): User
-    addTenant(userId: ID!): Property
+    addTenant(propertyId: ID!, username: String!): Property
     removeTenant(propertyId: ID!, userId: ID!): Property
     removeUser(userId: ID!, contactId: ID!, propertyId: ID!): User
     removeProperty(propertyId: ID!): Property

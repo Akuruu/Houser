@@ -28,7 +28,10 @@ const TenantForm = () => {
     }
 
     try {
-      return await addTenant(propertyId, tenantFormData);
+      console.log(tenantFormData);
+      return await addTenant({
+        variables: { propertyId: propertyId, username: tenantFormData }
+      });
     } catch (err) {
       console.error(err);
       setShowAlert(true);
