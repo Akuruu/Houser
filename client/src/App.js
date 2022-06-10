@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Renterportal from './components/Renterportal';
 import Ownerportal from './components/Ownerportal';
+import StripeContainer from './components/StripeContainer';
 import Properties from './components/Properties';
 
 import Test from './pages/Test';
@@ -56,6 +57,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/Renterportal" element={<Renterportal />} />
               <Route path="/Ownerportal" element={<Ownerportal />} />
+              <Route path="/Payment" element={<StripeContainer />} />
               <Route path='/Ownerportal/:propertyId' element={<Properties />} />
             </Routes>
           </div>

@@ -173,6 +173,10 @@ text-decoration: none;
   overflow: hidden;
 }
 
+#payment {
+  border-bottom: #4b6587;
+}
+
 .btn-pay {
   display: block;
   width: 100%;
