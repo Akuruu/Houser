@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Renterportal from './components/Renterportal';
 import Ownerportal from './components/Ownerportal';
+import StripeContainer from './components/StripeContainer';
 
 import Test from './pages/Test';
 import './styles/app.css';
