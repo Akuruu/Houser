@@ -9,6 +9,7 @@ import PropertyCard from '../PropertyCard';
 import '../../styles/app.css';
 import Assets1 from '../../assets/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash.jpg';
 import PropertyForm from '../PropertyForm';
+import TenantForm from '../TenantForm';
 
 const Properties = () => {
   const { propertyId } = useParams();
@@ -20,10 +21,13 @@ const Properties = () => {
   const ownerData = data?.property || [];
 
   //modal for edit property
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show1, setShow1] = useState(false);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true);
 
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
   useEffect(() => {
     console.log(ownerData);
   }, [ownerData]);
@@ -54,7 +58,7 @@ const Properties = () => {
                   <Card.Text>
                     {ownerData.state}, {ownerData.state} {ownerData.zipcode}
                   </Card.Text>
-                  <Button className="btn-block rentalbtn" onClick={handleShow}>
+                  <Button className="btn-block rentalbtn" onClick={handleShow1}>
                     Edit Property Info
                   </Button>
                 </Card.Body>
@@ -77,7 +81,10 @@ const Properties = () => {
                       </Card.Text>
                       <Card.Text>{tenants.contact.phone1}</Card.Text>
                       <Card.Text>{tenants.contact.phone2}</Card.Text>
-                      <Button className="btn-block btn-danger" onClick="">
+                      <Button
+                        className="btn-block btn-danger"
+                        onClick={handleShow2}
+                      >
                         Add Tenant
                       </Button>
                     </Card.Body>
@@ -89,12 +96,21 @@ const Properties = () => {
 
           {/* Modal for edit property info*/}
 
-          <Modal show={show} onHide={handleClose}>
+          <Modal show={show1} onHide={handleClose1}>
             <Modal.Header closeButton>
               <Modal.Title>My Property</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <PropertyForm />
+            </Modal.Body>
+          </Modal>
+
+          <Modal show={show2} onHide={handleClose2}>
+            <Modal.Header closeButton>
+              <Modal.Title>New Tenant</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <TenantForm />
             </Modal.Body>
           </Modal>
         </div>
