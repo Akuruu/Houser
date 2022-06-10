@@ -1,4 +1,4 @@
-import React, { useEffect }from 'react';
+import React, { useEffect, useState }from 'react';
 // import Card from 'react-bootstrap/Card';
 import { Container, CardGroup, Card, Button } from 'react-bootstrap';
 import { QUERY_PROPERTY } from '../../utils/queries';
@@ -17,6 +17,11 @@ const Properties = (props) => {
   });
 
   const ownerData = data?.property || [];
+
+   //modal for edit property
+   const [show, setShow] = useState(false);
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
 
   useEffect(()=> {
     console.log(ownerData)
@@ -45,7 +50,7 @@ const Properties = (props) => {
                     <Card.Text>Rent Amount: {ownerData.rent}</Card.Text>
                     <Card.Text>{ownerData.street}</Card.Text>
                     <Card.Text>{ownerData.state}, {ownerData.state}  {ownerData.zipcode}</Card.Text>
-                    <Button variant="primary" onClick={handleShow}>Edit Contact Info</Button>
+                    <Button variant="primary" onClick={handleShow}>Edit Property Info</Button>
                   </Card.Body>
                </Card>
 
